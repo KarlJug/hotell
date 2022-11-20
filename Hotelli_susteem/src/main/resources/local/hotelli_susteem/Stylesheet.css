@@ -1,0 +1,13 @@
+.root {
+    -fx-background-color: #3c3f41;
+}
+
+.label {
+    -fx-font-size: 18;
+    -fx-font-family: "Lucida Console";
+    -fx-text-fill: #bababa;
+}
+
+.button {
+
+}
