@@ -1,22 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="553.0" prefWidth="987.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="local.hotelli_susteem.HotelController">
+<AnchorPane fx:id="scenePane" prefHeight="400.0" prefWidth="600.0" stylesheets="@Stylesheet.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="local.hotelli_susteem.HotelController">
    <children>
-      <BorderPane prefHeight="553.0" prefWidth="987.0">
+      <BorderPane prefHeight="400.0" prefWidth="600.0">
          <left>
-            <VBox prefHeight="325.0" prefWidth="153.0" style="-fx-background-color: #999999;" BorderPane.alignment="CENTER" />
+            <VBox fx:id="vertbox" prefHeight="350.0" prefWidth="131.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="130.0" text="Rooms" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/rooms.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Button>
+                  <Pane prefHeight="272.0" prefWidth="131.0" />
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#connectioneCheck" prefHeight="40.0" prefWidth="130.0" text="Login" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/login.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Button>
+               </children></VBox>
          </left>
          <top>
-            <HBox prefHeight="62.0" prefWidth="987.0" style="-fx-background-color: #4d4d4d;" BorderPane.alignment="CENTER" />
+            <HBox fx:id="horosontboz" alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/hotelLogo.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label fx:id="logoLabel" text="Hotell" textFill="WHITE">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Pane prefHeight="50.0" prefWidth="466.0" />
+                  <Button mnemonicParsing="false" text="X" textFill="WHITE" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding></HBox>
          </top>
          <center>
-            <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #e5e5e5;" BorderPane.alignment="CENTER" />
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <left>
+                  <VBox fx:id="verbox" prefHeight="350.0" prefWidth="375.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Pane prefHeight="10.0" prefWidth="243.0" />
+                        <TextField fx:id="otsing" prefHeight="32.0" prefWidth="243.0" promptText="Kirjuta siia">
+                           <VBox.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding></TextField>
+                        <Pane prefHeight="10.0" prefWidth="243.0" />
+                        <Button mnemonicParsing="false" prefHeight="58.0" prefWidth="275.0" text="Button">
+                           <graphic>
+                              <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" spacing="10.0">
+                                 <children>
+                                    <ImageView fx:id="img" fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Line endX="-100.2071304321289" endY="-20.376771926879883" startX="-100.0" />
+                                    <ImageView fx:id="img" fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Line endX="-100.2071304321289" endY="-20.376771926879883" startX="-100.0" />
+                                    <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Line endX="-100.2071304321289" endY="-20.376771926879883" startX="-100.0" />
+                                    <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </HBox>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </VBox>
+               </left>
+               <center>
+                  <VBox prefHeight="350.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+               </center>
+            </BorderPane>
          </center>
       </BorderPane>
    </children>
