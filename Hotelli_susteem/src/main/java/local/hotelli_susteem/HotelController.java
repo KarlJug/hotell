@@ -22,21 +22,26 @@ import java.util.ResourceBundle;
 
 public class HotelController implements Initializable {
 
-
     public void connectioneCheck(ActionEvent event) {
-        DatabaseConnectionManager dcm = new DatabaseConnectionManager("localhost", "test_info", "root", "Passw0rd");
+        DatabaseConnectionManager dcm = new DatabaseConnectionManager("localhost",
+                "hotell", "postgres", "Passw0rd");
         try {
             Connection connection = dcm.getConnection();
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("select UserName from UserAccount");
-            while (resultSet.next()) {
-                System.out.println(resultSet.getString(1));
-            }
-        }   catch (SQLException e) {
+            KlientDAO klientDAO = new KlientDAO(connection);
+
+            Klient klient = new Klient();
+            klient.setEes_nimi("Uus");
+            klient.setPere_nimi("Inimene");
+            klient.setEmail("uini@wh.gov");
+
+            klient = klientDAO.create(klient);
+            System.out.println(klient.getEes_nimi() + " " + klient.getPere_nimi());
+
+
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
-
 
 
     @FXML
