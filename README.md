@@ -18,7 +18,7 @@ PRIMARY KEY (kliendi_id)
 
 | kliendi_id | ees_nimi      | pere_nimi     | email                   |
 | ----------:|:-------------:|:-------------:|:-----------------------:|
-| 1          | Nimi          |perekond       | Nimi.perekond@gamil.com |
+| 1          | Nimi          |perekond       | Nimi.perekond@gmail.com |
 ---
 ### Tekst
 ```
@@ -37,7 +37,7 @@ PRIMARY KEY (kliendi_id)
 
 | kliendi_id | ees_nimi      | pere_nimi     | email                   |
 | ----------:|:-------------:|:-------------:|:-----------------------:|
-| 1          | Nimi          |perekond       | Nimi.perekond@gamil.com |
+| 1          | Nimi          |perekond       | Nimi.perekond@gmail.com |
 ---
 ### Tekst
 ```
@@ -56,7 +56,7 @@ PRIMARY KEY (kliendi_id)
 
 | kliendi_id | ees_nimi      | pere_nimi     | email                   |
 | ----------:|:-------------:|:-------------:|:-----------------------:|
-| 1          | Nimi          |perekond       | Nimi.perekond@gamil.com |
+| 1          | Nimi          |perekond       | Nimi.perekond@gmail.com |
 
 ***
 
