@@ -14,7 +14,7 @@ PRIMARY KEY (kliendi_id)
 );
 ```
 
-&#8595; Mis tekitab sellise tabeli &#8595;
+ &#8595; Mis tekitab sellise tabeli &#8595;
 
 | kliendi_id | ees_nimi      | pere_nimi     | email                   |
 | ----------:|:-------------:|:-------------:|:-----------------------:|
