@@ -14,13 +14,51 @@ PRIMARY KEY (kliendi_id)
 );
 ```
 
-Tekitab sellise tabeli
+&#8595; Mis tekitab sellise tabeli &#8595;
 
-| kliendi_id| ees_nimi      | pere_nimi     | email                    |
-| --------: |:-------------:|:-------------:| :---------------------: |
-| 1         | Nimi          |perekond       | Nimi.perekond@gamil.com |
+| kliendi_id | ees_nimi      | pere_nimi     | email                   |
+| ----------:|:-------------:|:-------------:|:-----------------------:|
+| 1          | Nimi          |perekond       | Nimi.perekond@gamil.com |
+---
+### Tekst
+```
+CREATE SEQUENCE hotell_kliendi_seq;
 
+CREATE TABLE kliendid (
+kliendi_id bigint NOT NULL DEFAULT nextval('hotell_kliendi_seq'),
+ees_nimi varchar(50) DEFAULT NULL,
+pere_nimi varchar(50) DEFAULT NULL,
+email varchar(50) DEFAULT NULL,
+PRIMARY KEY (kliendi_id)
+);
+```
 
+&#8595; Mis tekitab sellise tabeli &#8595;
+
+| kliendi_id | ees_nimi      | pere_nimi     | email                   |
+| ----------:|:-------------:|:-------------:|:-----------------------:|
+| 1          | Nimi          |perekond       | Nimi.perekond@gamil.com |
+---
+### Tekst
+```
+CREATE SEQUENCE hotell_kliendi_seq;
+
+CREATE TABLE kliendid (
+kliendi_id bigint NOT NULL DEFAULT nextval('hotell_kliendi_seq'),
+ees_nimi varchar(50) DEFAULT NULL,
+pere_nimi varchar(50) DEFAULT NULL,
+alg_aeg date DEFAULT NULL,
+lõpp_aeg date DEFAULT NULL,
+PRIMARY KEY (kliendi_id)
+);
+```
+&#8595; Mis tekitab sellise tabeli &#8595;
+
+| kliendi_id | ees_nimi      | pere_nimi     | email                   |
+| ----------:|:-------------:|:-------------:|:-----------------------:|
+| 1          | Nimi          |perekond       | Nimi.perekond@gamil.com |
+
+***
 
 - ViewFactory class-is on scene-ide laadimine
 - Mode class-is kontrollib kas Stage on olemas ja kui ei ole siis tekitab
