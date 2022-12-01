@@ -26,38 +26,38 @@ CREATE TABLE kliendid (
 CREATE SEQUENCE hotell_kliendi_seq;
 
 CREATE TABLE kliendid (
-kliendi_id bigint NOT NULL DEFAULT nextval('hotell_kliendi_seq'),
-ees_nimi varchar(50) DEFAULT NULL,
-pere_nimi varchar(50) DEFAULT NULL,
-email varchar(50) DEFAULT NULL,
-PRIMARY KEY (kliendi_id)
+	kliendi_id bigint NOT NULL DEFAULT nextval('hotell_kliendi_seq'),
+	ees_nimi varchar(50) DEFAULT NULL,
+	pere_nimi varchar(50) DEFAULT NULL,
+	email varchar(50) DEFAULT NULL,
+	PRIMARY KEY (kliendi_id)
 );
 ```
 
 &#8595; Mis tekitab sellise tabeli &#8595;
 
-| kliendi_id | toa_num       | voodikohtade_arv | hind |
-| ----------:|:-------------:|-----------------:|-----:|
-| 1          | Nimi          | 3                | 500  |
+| kliendi_id | toa_num       | voodikohtade_arv | hind | broneeria_eesnimi | broneeria_perekonnanimi |
+| ----------:|:-------------:|-----------------:|-----:|:-----------------:|:-----------------------:|
+| 1          | Nimi          | 3                | 500  | Nimi		   | Perekonnanimi	     |
 ---
 ### Tekst broneeringud
 ```
 CREATE SEQUENCE hotell_kliendi_seq;
 
 CREATE TABLE kliendid (
-kliendi_id bigint NOT NULL DEFAULT nextval('hotell_kliendi_seq'),
-ees_nimi varchar(50) DEFAULT NULL,
-pere_nimi varchar(50) DEFAULT NULL,
-alg_aeg date DEFAULT NULL,
-lõpp_aeg date DEFAULT NULL,
-PRIMARY KEY (kliendi_id)
+	kliendi_id bigint NOT NULL DEFAULT nextval('hotell_kliendi_seq'),
+	ees_nimi varchar(50) DEFAULT NULL,
+	pere_nimi varchar(50) DEFAULT NULL,
+	alg_aeg date DEFAULT NULL,
+	lõpp_aeg date DEFAULT NULL,
+	PRIMARY KEY (kliendi_id)
 );
 ```
 &#8595; Mis tekitab sellise tabeli &#8595;
 
-| kliendi_id | külastaja     | tuba          | alg_aeg    | lõpp_aeg   |
-| ----------:|:-------------:|:-------------:|:----------:|:----------:|
-| 1          | Nimi          |perekond       | DD.MM.YYYY | DD.MM.YYYY |
+| kliendi_id | külastaja_eesnimi| külastaja_perekonnanimi | tuba          | alg_aeg    | lõpp_aeg   |
+| ----------:|:----------------:|:-----------------------:|:-------------:|:----------:|:----------:|
+| 1          | Nimi             | Perekonnanimi		  | perekond      | DD.MM.YYYY | DD.MM.YYYY |
 
 ***
 
