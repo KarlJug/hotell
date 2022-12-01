@@ -17,3 +17,5 @@ PRIMARY KEY (kliendi_id)
 ### ViewFactory class-is on scene-ide laadimine
 ### Mode class-is kontrollib kas Stage on olemas ja kui ei ole siis tekitab
 ### HotellApplication on selleks laadida algne vaade
+
+## Kui on vaja uus vaade teha siis selle vaate Controller-isse lisada selle vaate jaoks vajatud, funksioonid ViewFactory-sse lisada selle laadimine ja ClientController-isse lisada nuppude functsioon, mis viivad järgmisesse vaatesse
