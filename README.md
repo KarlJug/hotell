@@ -20,7 +20,7 @@ PRIMARY KEY (kliendi_id)
 | ----------:|:-------------:|:-------------:|:-----------------------:|
 | 1          | Nimi          |perekond       | Nimi.perekond@gmail.com |
 ---
-### Tekst
+### Tekst toad
 ```
 CREATE SEQUENCE hotell_kliendi_seq;
 
@@ -39,7 +39,7 @@ PRIMARY KEY (kliendi_id)
 | ----------:|:-------------:|:-------------:|:-----------------------:|
 | 1          | Nimi          |perekond       | Nimi.perekond@gmail.com |
 ---
-### Tekst
+### Tekst broneeringud
 ```
 CREATE SEQUENCE hotell_kliendi_seq;
 
