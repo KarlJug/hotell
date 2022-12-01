@@ -14,6 +14,14 @@ PRIMARY KEY (kliendi_id)
 );
 ```
 
+Tekitab sellise tabeli
+
+| kliendi_id| ees_nimi      | pere_nimi     | email                    |
+| --------: |:-------------:|:-------------:| :---------------------: |
+| 1         | Nimi          |perekond       | Nimi.perekond@gamil.com |
+
+
+
 - ViewFactory class-is on scene-ide laadimine
 - Mode class-is kontrollib kas Stage on olemas ja kui ei ole siis tekitab
 - HotellApplication on selleks laadida algne vaade
