@@ -16,9 +16,9 @@ PRIMARY KEY (kliendi_id)
 
  &#8595; Mis tekitab sellise tabeli &#8595;
 
-| kliendi_id | ees_nimi      | pere_nimi     | email                   |
-| ----------:|:-------------:|:-------------:|:-----------------------:|
-| 1          | Nimi          |perekond       | Nimi.perekond@gmail.com |
+| kliendi_id | ees_nimi      | pere_nimi     | isikukood   | email                   |
+| ----------:|:-------------:|:-------------:|:-----------:|:-----------------------:|
+| 1          | Nimi          | perekonnanimi | 55555555555 | Nimi.perekond@gmail.com |
 ---
 ### Tekst toad
 ```
@@ -35,9 +35,9 @@ PRIMARY KEY (kliendi_id)
 
 &#8595; Mis tekitab sellise tabeli &#8595;
 
-| kliendi_id | ees_nimi      | pere_nimi     | email                   |
-| ----------:|:-------------:|:-------------:|:-----------------------:|
-| 1          | Nimi          |perekond       | Nimi.perekond@gmail.com |
+| kliendi_id | toa_num       | voodikohtade_arv | hind |
+| ----------:|:-------------:|-----------------:|-----:|
+| 1          | Nimi          | 3                | 500  |
 ---
 ### Tekst broneeringud
 ```
@@ -54,7 +54,7 @@ PRIMARY KEY (kliendi_id)
 ```
 &#8595; Mis tekitab sellise tabeli &#8595;
 
-| kliendi_id | ees_nimi      | pere_nimi     | alg_aeg    | lõpp_aeg   |
+| kliendi_id | külastaja     | tuba          | alg_aeg    | lõpp_aeg   |
 | ----------:|:-------------:|:-------------:|:----------:|:----------:|
 | 1          | Nimi          |perekond       | DD.MM.YYYY | DD.MM.YYYY |
 
