@@ -6,17 +6,18 @@
 CREATE SEQUENCE hotell_kliendi_seq;
 
 CREATE TABLE kliendid (
-kliendi_id bigint NOT NULL DEFAULT nextval('hotell_kliendi_seq'),
-ees_nimi varchar(50) DEFAULT NULL,
-pere_nimi varchar(50) DEFAULT NULL,
-email varchar(50) DEFAULT NULL,
-PRIMARY KEY (kliendi_id)
+	kliendi_id bigint NOT NULL DEFAULT nextval('hotell_kliendi_seq'),
+	eesnimi varchar(50) DEFAULT NULL,
+	pere_nimi varchar(50) DEFAULT NULL,
+	isikukood varchar(11) DEFAULT NULL,
+	email varchar(50) DEFAULT NULL,
+	PRIMARY KEY (kliendi_id)
 );
 ```
 
  &#8595; Mis tekitab sellise tabeli &#8595;
 
-| kliendi_id | ees_nimi      | pere_nimi     | isikukood   | email                   |
+| kliendi_id | eesnimi       | pere_nimi     | isikukood   | email                   |
 | ----------:|:-------------:|:-------------:|:-----------:|:-----------------------:|
 | 1          | Nimi          | perekonnanimi | 55555555555 | Nimi.perekond@gmail.com |
 ---
