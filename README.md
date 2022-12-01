@@ -1,4 +1,4 @@
-# hotell
+# Hotell
 
 ### Teha andmepaas nimega hotell ja copy past-ida query-sse järgmised käsud
 
