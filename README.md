@@ -54,9 +54,9 @@ PRIMARY KEY (kliendi_id)
 ```
 &#8595; Mis tekitab sellise tabeli &#8595;
 
-| kliendi_id | ees_nimi      | pere_nimi     | email                   |
-| ----------:|:-------------:|:-------------:|:-----------------------:|
-| 1          | Nimi          |perekond       | Nimi.perekond@gmail.com |
+| kliendi_id | ees_nimi      | pere_nimi     | alg_aeg    | lõpp_aeg   |
+| ----------:|:-------------:|:-------------:|:----------:|:----------:|
+| 1          | Nimi          |perekond       | DD.MM.YYYY | DD.MM.YYYY |
 
 ***
 
