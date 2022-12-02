@@ -1,5 +1,9 @@
 # Hotell
-[SQL](https://github.com/KarlJug/hotel/edit/main/README.md#andmebaas)
+## [SQL](https://github.com/KarlJug/hotel/edit/main/README.md#andmebaas)
+- [Kliendid](https://github.com/KarlJug/hotel/edit/main/README.md#teha-andmepaas-nimega-hotell-ja-copy-past-ida-query-sse-j%C3%A4rgmised-k%C3%A4sud)
+- [Toad](https://github.com/KarlJug/hotel/edit/main/README.md#tekst-toad)
+- [Broneeringud](https://github.com/KarlJug/hotel/edit/main/README.md#tekst-broneeringud)
+
 
 [Info failide kohta](https://github.com/KarlJug/hotel/edit/main/README.md#info-failide-kohta)
 
