@@ -86,6 +86,11 @@ CREATE TABLE kliendid (
 - ViewFactory class-is on scene-ide laadimine
 - Mode class-is kontrollib
 - DB kaustas on kõik class-id millega ühendub andmebaasi
+- recours kaustas on
+	- CSS
+	- FXML
+	- Icons
+	- Images
 
 ***
 
@@ -93,5 +98,5 @@ CREATE TABLE kliendid (
 
 1. Teha FXML fail ja sellele controller
 2. ViewFactory class-ile lisada sellele uue vaate privat Anchorpane controller ja teha getter method
-3. 
+3. Controllerisse saab lisada functsioone selle vaate nuppudele
 
