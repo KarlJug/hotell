@@ -1,12 +1,12 @@
 # Hotell
-## [SQL](https://github.com/KarlJug/hotel/blob/main/README.md#andmebaas)
-- [Kliendid](https://github.com/KarlJug/hotel/blob/main/README.md#teha-andmepaas-nimega-hotell-ja-copy-past-ida-query-sse-j%C3%A4rgmised-k%C3%A4sud)
-- [Toad](https://github.com/KarlJug/hotel/blob/main/README.md#tekst-toad)
-- [Broneeringud](https://github.com/KarlJug/hotel/blob/main/README.md#tekst-broneeringud)
+1. ### [ SQL](https://github.com/KarlJug/hotel/blob/main/README.md#andmebaas)
+	- [Kliendid](https://github.com/KarlJug/hotel/blob/main/README.md#teha-andmepaas-nimega-hotell-ja-copy-past-ida-query-sse-j%C3%A4rgmised-k%C3%A4sud)
+	- [Toad](https://github.com/KarlJug/hotel/blob/main/README.md#tekst-toad)
+	- [Broneeringud](https://github.com/KarlJug/hotel/blob/main/README.md#tekst-broneeringud)
+	
+2. ### [Info failide kohta](https://github.com/KarlJug/hotel/blob/main/README.md#info-failide-kohta)
 
-## [Info failide kohta](https://github.com/KarlJug/hotel/blob/main/README.md#info-failide-kohta)
-
-## [Kuidas teha uus vaade](https://github.com/KarlJug/hotel/blob/main/README.md#kuidas-teha-uus-vaade)
+3. ### [Kuidas teha uus vaade](https://github.com/KarlJug/hotel/blob/main/README.md#kuidas-teha-uus-vaade)
 
 ## andmebaas
 
@@ -91,5 +91,4 @@ CREATE TABLE kliendid (
 
 ## Kuidas teha uus vaade
 
-#### Kui on vaja uus vaade teha siis selle vaate Controller-isse lisada selle vaate jaoks vajatud, funksioonid ViewFactory-sse lisada selle laadimine ja ClientController-isse lisada nuppude functsioon, mis viivad järgmisesse vaatesse
-
+1. 
