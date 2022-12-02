@@ -4,10 +4,9 @@
 - [Toad](https://github.com/KarlJug/hotel/blob/main/README.md#tekst-toad)
 - [Broneeringud](https://github.com/KarlJug/hotel/blob/main/README.md#tekst-broneeringud)
 
+## [Info failide kohta](https://github.com/KarlJug/hotel/blob/main/README.md#info-failide-kohta)
 
-[Info failide kohta](https://github.com/KarlJug/hotel/blob/main/README.md#info-failide-kohta)
-
-[Kuidas teha uus vaade](https://github.com/KarlJug/hotel/blob/main/README.md#kuidas-teha-uus-vaade)
+## [Kuidas teha uus vaade](https://github.com/KarlJug/hotel/blob/main/README.md#kuidas-teha-uus-vaade)
 
 ## andmebaas
 
