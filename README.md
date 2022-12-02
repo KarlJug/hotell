@@ -4,9 +4,9 @@
 	- [Toad](https://github.com/KarlJug/hotel/blob/main/README.md#tekst-toad)
 	- [Broneeringud](https://github.com/KarlJug/hotel/blob/main/README.md#tekst-broneeringud)
 	
-2. ### [Info failide kohta](https://github.com/KarlJug/hotel/blob/main/README.md#info-failide-kohta)
+2. ### [Info failide kohta](https://github.com/KarlJug/hotel/blob/main/README.md#info-failide-kohta-1)
 
-3. ### [Kuidas teha uus vaade](https://github.com/KarlJug/hotel/blob/main/README.md#kuidas-teha-uus-vaade)
+3. ### [Kuidas teha uus vaade](https://github.com/KarlJug/hotel/blob/main/README.md#kuidas-teha-uus-vaade-1)
 
 ## andmebaas
 
@@ -91,4 +91,7 @@ CREATE TABLE kliendid (
 
 ## Kuidas teha uus vaade
 
-1. 
+1. Teha FXML fail ja sellele controller
+2. ViewFactory class-ile lisada sellele uue vaate privat Anchorpane controller ja teha getter method
+3. 
+
