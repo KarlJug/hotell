@@ -1,4 +1,11 @@
 # Hotell
+[SQL](https://github.com/KarlJug/hotel/edit/main/README.md#andmebaas)
+
+[Info failide kohta](https://github.com/KarlJug/hotel/edit/main/README.md#info-failide-kohta)
+
+[Kuidas teha uus vaade](https://github.com/KarlJug/hotel/edit/main/README.md#kuidas-teha-uus-vaade)
+
+## andmebaas
 
 ### Teha andmepaas nimega hotell ja copy past-ida query-sse järgmised käsud
 
@@ -20,8 +27,11 @@ CREATE TABLE kliendid (
 | kliendi_id | eesnimi       | pere_nimi     | isikukood   | email                   |
 | ----------:|:-------------:|:-------------:|:-----------:|:-----------------------:|
 | 1          | Nimi          | perekonnanimi | 55555555555 | Nimi.perekond@gmail.com |
----
+
+***
+
 ### Tekst toad
+
 ```
 CREATE SEQUENCE hotell_kliendi_seq;
 
@@ -41,8 +51,11 @@ CREATE TABLE kliendid (
 | id	 | toa_num       | voodikohtade_arv | hind | broneeria_eesnimi | broneeria_perekonnanimi |
 | ------:|:-------------:|-----------------:|-----:|:-----------------:|:-----------------------:|
 | 1      | Nimi          | 3                | 500  | Nimi	       | Perekonnanimi	         |
+
 ***
+
 ### Tekst broneeringud
+
 ```
 CREATE SEQUENCE hotell_kliendi_seq;
 
@@ -64,9 +77,16 @@ CREATE TABLE kliendid (
 
 ***
 
+## Info failide kohta
+
 - HotellApplication on main ja sellega laaditakse algne vaade
 - ViewFactory class-is on scene-ide laadimine
-- Mode class-is kontrollib 
+- Mode class-is kontrollib
+- DB kaustas on kõik class-id millega ühendub andmebaasi
 
-### Kui on vaja uus vaade teha siis selle vaate Controller-isse lisada selle vaate jaoks vajatud, funksioonid ViewFactory-sse lisada selle laadimine ja ClientController-isse lisada nuppude functsioon, mis viivad järgmisesse vaatesse
+***
+
+## Kuidas teha uus vaade
+
+#### Kui on vaja uus vaade teha siis selle vaate Controller-isse lisada selle vaate jaoks vajatud, funksioonid ViewFactory-sse lisada selle laadimine ja ClientController-isse lisada nuppude functsioon, mis viivad järgmisesse vaatesse
 
