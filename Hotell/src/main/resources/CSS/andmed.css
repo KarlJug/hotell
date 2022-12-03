@@ -1,0 +1,22 @@
+.main {
+    -fx-background-color: #FFFFFF;
+}
+
+.container {
+    -fx-alignment: center_left;
+    -fx-spacing: 10;
+
+}
+
+.container Button {
+    -fx-pref-width: 100;
+    -fx-pref-height: 40;
+    -fx-background-color: #e6e6e6;
+    -fx-font-size: 1.1em;
+    -fx-background-radius: 0em;
+}
+
+.container Button:hover {
+    cursor: hand;
+    -fx-background-color: #b3b3b3;
+}
