@@ -6,30 +6,38 @@ public class Klient implements DataTransferObject {
 
     private long id;
 
-    private String ees_nimi, pere_nimi, email;
+    private String eesnimi, pere_nimi, isikukood, email;
 
     public void setId(long id) {
         this.id = id;
     }
 
-    public void setEes_nimi(String ees_nimi) {
-        this.ees_nimi = ees_nimi;
+    public void setEesnimi(String eesnimi) {
+        this.eesnimi = eesnimi;
     }
 
     public void setPere_nimi(String pere_nimi) {
         this.pere_nimi = pere_nimi;
     }
 
+    public void setIsikukood(String isikukood) {
+        this.isikukood = isikukood;
+    }
+
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getEes_nimi() {
-        return ees_nimi;
+    public String getEesnimi() {
+        return eesnimi;
     }
 
     public String getPere_nimi() {
         return pere_nimi;
+    }
+
+    public String getIsikukood() {
+        return isikukood;
     }
 
     public String getEmail() {

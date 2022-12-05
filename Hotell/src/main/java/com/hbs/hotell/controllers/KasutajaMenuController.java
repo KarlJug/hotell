@@ -16,8 +16,22 @@ public class KasutajaMenuController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        addListeners();
+
         login_btn.setOnAction(event -> loginView());
 
+    }
+
+    private void onBooking() {
+        Model.getInstance().getViewFactory().getClientSelectMenuItem().set("Booking");
+    }
+    private void onInfo() {
+        Model.getInstance().getViewFactory().getClientSelectMenuItem().set("Info");
+    }
+
+    private void addListeners() {
+        booking_btn.setOnAction(event -> onBooking());
+        info_ptn.setOnAction(event -> onInfo());
     }
 
     private void loginView() {

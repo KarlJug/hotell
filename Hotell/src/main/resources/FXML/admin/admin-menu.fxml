@@ -16,8 +16,8 @@
          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ADMIN" />
       </VBox>
       <VBox layoutY="80.0" prefHeight="400.0" prefWidth="160.0" styleClass="menu_container" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
-         <Button fx:id="kliendid_btn" mnemonicParsing="false" prefWidth="150.0" styleClass="menu_button" text="Kliendid" />
          <Button fx:id="broneeringud_ptn" mnemonicParsing="false" styleClass="menu_button" text="Broneeringud" />
+         <Button fx:id="kliendid_btn" mnemonicParsing="false" prefWidth="150.0" styleClass="menu_button" text="Kliendid" />
          <Button fx:id="hotellitoad_btn" mnemonicParsing="false" styleClass="menu_button" text="Hotellitoad" />
          <Line endX="120.0" />
          <Button fx:id="logout_btn" mnemonicParsing="false" styleClass="alt_menu_btn" text="Logi välja">

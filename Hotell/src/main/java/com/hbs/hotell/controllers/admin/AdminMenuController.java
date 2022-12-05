@@ -17,7 +17,26 @@ public class AdminMenuController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        addListeners();
+
         logout_btn.setOnAction(event -> onLogout());
+    }
+
+
+    private void onBooked() {
+        Model.getInstance().getViewFactory().getAdminSelectMenuItem().set("Booked");
+    }
+    private void onRooms() {
+        Model.getInstance().getViewFactory().getAdminSelectMenuItem().set("Rooms");
+    }
+    private void onClients() {
+        Model.getInstance().getViewFactory().getAdminSelectMenuItem().set("Clients");
+    }
+
+    private void addListeners() {
+        kliendid_btn.setOnAction(event -> onClients());
+        broneeringud_ptn.setOnAction(event -> onBooked());
+        hotellitoad_btn.setOnAction(event -> onRooms());
     }
 
     private void onLogout() {

@@ -6,12 +6,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-<AnchorPane prefHeight="500.0" prefWidth="800.0" stylesheets="@../../CSS/andmed.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hbs.hotell.controllers.admin.BookingController">
+<AnchorPane prefHeight="500.0" prefWidth="800.0" stylesheets="@../../CSS/andmed.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hbs.hotell.controllers.admin.KlientController">
    <children>
       <HBox prefHeight="85.0" prefWidth="580.0" styleClass="container" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Button fx:id="lisa_isik_btn" mnemonicParsing="false" onAction="#addUserView" text="Lisa" />
-            <Button fx:id="refresh_btn" mnemonicParsing="false" onAction="#refreshTable" text="Refesh" />
+            <Button fx:id="lisa_isik_btn" mnemonicParsing="false" text="Lisa" />
+            <Button fx:id="refresh_btn" mnemonicParsing="false" text="Refesh" />
          </children>
       </HBox>
       <TreeTableView layoutX="200.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="90.0">

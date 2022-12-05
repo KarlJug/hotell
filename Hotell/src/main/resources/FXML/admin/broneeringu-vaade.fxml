@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-<AnchorPane prefHeight="500.0" prefWidth="800.0" stylesheets="@../../CSS/andmed.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hbs.hotell.controllers.admin.KlientController">
+<AnchorPane prefHeight="500.0" prefWidth="800.0" stylesheets="@../../CSS/andmed.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hbs.hotell.controllers.admin.BookingController">
    <children>
       <HBox prefHeight="85.0" prefWidth="580.0" styleClass="container" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
          <children>

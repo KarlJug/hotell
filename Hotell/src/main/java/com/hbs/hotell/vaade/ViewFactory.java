@@ -2,6 +2,9 @@ package com.hbs.hotell.vaade;
 
 import com.hbs.hotell.controllers.ClientController;
 import com.hbs.hotell.controllers.admin.AdminController;
+import com.hbs.hotell.controllers.admin.KlientController;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -10,13 +13,28 @@ import javafx.stage.Stage;
 public class ViewFactory {
     // Kliendi vaade
     private AnchorPane bookingView;
+    private AnchorPane infoView;
+    private final StringProperty clientSelectMenuItem;
 
     // admin vaade
+    private final StringProperty adminSelectMenuItem;
     private AnchorPane clientsView;
     private AnchorPane bookedView;
     private AnchorPane roomsView;
 
-    public ViewFactory() {}
+
+    public ViewFactory() {
+        this.clientSelectMenuItem = new SimpleStringProperty("");
+        this.adminSelectMenuItem = new SimpleStringProperty("");
+    }
+
+    public StringProperty getClientSelectMenuItem() {
+        return clientSelectMenuItem;
+    }
+
+    public StringProperty getAdminSelectMenuItem() {
+        return adminSelectMenuItem;
+    }
 
     // Getter-id vaatavad kas see class on juba olemas ja kui ei ole siis teeb
     // getter-id hoiavad laetud class-e, et ei peaks olemas olevat FXML-i uuesti laadima
@@ -29,6 +47,17 @@ public class ViewFactory {
             }
         }
         return bookingView;
+    }
+
+    public AnchorPane getInfoView() {
+        if (infoView == null) {
+            try {
+                infoView = new FXMLLoader(getClass().getResource("/FXML/kasutaja/info-vaade.fxml")).load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return infoView;
     }
 
     // Admin
@@ -65,6 +94,7 @@ public class ViewFactory {
         return roomsView;
     }
 
+
     public void showLoginWindow() {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/login.fxml"));
         createStage(loader);
@@ -84,6 +114,12 @@ public class ViewFactory {
         createStage(loader);
     }
 
+    public void showAddClient() {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/admin/lisa/lisa-klient.fxml"));
+        createStage(loader);
+    }
+
+    // Teeb stage-i
     private void createStage(FXMLLoader loader) {
         Scene scene = null;
         try {

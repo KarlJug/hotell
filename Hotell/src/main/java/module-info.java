@@ -14,5 +14,6 @@ module com.hbs.hotell {
     exports com.hbs.hotell.util;
     exports com.hbs.hotell.vaade;
     opens com.hbs.hotell.controllers to javafx.fxml;
+    exports com.hbs.hotell.controllers.admin.lisa;
 
 }

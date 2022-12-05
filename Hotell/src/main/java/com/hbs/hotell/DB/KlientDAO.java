@@ -11,17 +11,17 @@ import java.util.List;
 public class KlientDAO extends DataAccessObject<Klient> {
 
     // Teeb INSERT query mis lisab andmed faili
-    private static final String INSERT = "INSERT INTO kliendid (ees_nimi, pere_nimi, " +
-            "email) VALUES (?, ?, ?)";
+    private static final String INSERT = "INSERT INTO kliendid (eesnimi, pere_nimi, " +
+            "isikukood, email) VALUES (?, ?, ?, ?)";
 
     // Teeb SELECT query mis leiab kliendi id järgi kliendi ja valib selle info
 
-    private static final String GET_ONE = "SELECT kliendi_id, ees_nimi, pere_nimi, " +
-            "email FROM kliendid WHERE kliendi_id = ?";
+    private static final String GET_ONE = "SELECT kliendi_id, eesnimi, pere_nimi, " +
+            "isikukood, email FROM kliendid WHERE kliendi_id = ?";
 
     // Teeb UPDATE query mis leiab kliendi id järgi kliendi ja uuendab infot
-    private static final String UPDATE = "UPDATE kliendid SET ees_nimi = ?, pere_nimi = ?, " +
-            "email = ? WHERE kliendi_id = ?";
+    private static final String UPDATE = "UPDATE kliendid SET eesnimi = ?, pere_nimi = ?, " +
+            "isikukood = ?, email = ? WHERE kliendi_id = ?";
 
     // Teeb DELETE query-s mis leiab kasutaja id järgi kliendi ja kustutab selle
     private static final String DELETE = "DELETE FROM kliendid WHERE kliendi_id = ?";
@@ -39,8 +39,9 @@ public class KlientDAO extends DataAccessObject<Klient> {
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
                 klient.setId(rs.getLong("kliendi_id"));
-                klient.setEes_nimi(rs.getString("ees_nimi"));
+                klient.setEesnimi(rs.getString("eesnimi"));
                 klient.setPere_nimi(rs.getString("pere_nimi"));
+                klient.setIsikukood(rs.getString("isikukood"));
                 klient.setEmail(rs.getString("email"));
 
             }
@@ -60,10 +61,11 @@ public class KlientDAO extends DataAccessObject<Klient> {
     public Klient update(Klient dto) {
         Klient klient = null;
         try (PreparedStatement statement = this.connection.prepareStatement(UPDATE)) {
-            statement.setString(1, dto.getEes_nimi());
+            statement.setString(1, dto.getEesnimi());
             statement.setString(2, dto.getPere_nimi());
-            statement.setString(3, dto.getEmail());
-            statement.setLong(4, dto.getId());
+            statement.setString(3, dto.getIsikukood());
+            statement.setString(4, dto.getEmail());
+            statement.setLong(5, dto.getId());
 
             statement.execute();
             klient = this.findById(dto.getId());
@@ -78,9 +80,10 @@ public class KlientDAO extends DataAccessObject<Klient> {
     @Override
     public Klient create(Klient dto) {
         try (PreparedStatement statement = this.connection.prepareStatement(INSERT)) {
-            statement.setString(1, dto.getEes_nimi());
+            statement.setString(1, dto.getEesnimi());
             statement.setString(2, dto.getPere_nimi());
-            statement.setString(3, dto.getEmail());
+            statement.setString(3, dto.getIsikukood());
+            statement.setString(4, dto.getEmail());
 
             statement.execute();
 
