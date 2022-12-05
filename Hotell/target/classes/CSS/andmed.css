@@ -11,12 +11,13 @@
 .container Button {
     -fx-pref-width: 100;
     -fx-pref-height: 40;
-    -fx-background-color: #e6e6e6;
+    -fx-background-color: #b3b3b3;
     -fx-font-size: 1.1em;
     -fx-background-radius: 0em;
 }
 
 .container Button:hover {
     cursor: hand;
-    -fx-background-color: #b3b3b3;
+    -fx-background-color: #515151;
+    -fx-text-fill: #b3b3b3;
 }

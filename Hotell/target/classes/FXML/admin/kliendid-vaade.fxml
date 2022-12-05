@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" stylesheets="@../../CSS/andmed.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hbs.hotell.controllers.admin.KlientController">
+   <children>
+      <HBox prefHeight="85.0" prefWidth="580.0" styleClass="container" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="lisa_isik_btn" mnemonicParsing="false" text="Lisa" />
+            <Button fx:id="refresh_btn" mnemonicParsing="false" text="Refesh" />
+         </children>
+      </HBox>
+      <TreeTableView layoutX="200.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="90.0">
+        <columns>
+          <TreeTableColumn fx:id="client_col_id" prefWidth="75.0" text="ID" />
+          <TreeTableColumn fx:id="client_col_nimi" prefWidth="120.0" text="Nimi" />
+            <TreeTableColumn fx:id="client_col_pere_nimi" prefWidth="150.0" text="Perekonnanimi" />
+            <TreeTableColumn fx:id="client_col_isikukood" prefWidth="107.0" text="Isikukood" />
+            <TreeTableColumn fx:id="client_col_email" prefWidth="235.0" text="Email" />
+        </columns>
+      </TreeTableView>
+   </children>
+</AnchorPane>

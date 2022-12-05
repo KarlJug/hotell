@@ -2,14 +2,14 @@
 
 <?import javafx.scene.layout.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx"
+<BorderPane fx:id="admin_fxml_id" xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml">
 
     <left>
         <fx:include source="admin-menu.fxml"/>
     </left>
     <center>
-        <fx:include source="kliendi-lisamis-vaade.fxml"/>
+        <fx:include source="broneeringu-vaade.fxml"/>
     </center>
 
 </BorderPane>
