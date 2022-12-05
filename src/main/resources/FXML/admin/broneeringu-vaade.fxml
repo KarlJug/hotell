@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" stylesheets="@../../CSS/andmed.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hbs.hotell.controllers.admin.BookingController">
+   <children>
+      <HBox prefHeight="85.0" prefWidth="580.0" styleClass="container" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="lisa_isik_btn" mnemonicParsing="false" onAction="#addUserView" text="Lisa" />
+            <Button fx:id="refresh_btn" mnemonicParsing="false" onAction="#refreshTable" text="Refesh" />
+         </children>
+      </HBox>
+      <TreeTableView layoutX="200.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="90.0">
+        <columns>
+          <TreeTableColumn fx:id="book_col_id" prefWidth="75.0" text="ID" />
+          <TreeTableColumn fx:id="book_col_eesnimi" prefWidth="120.0" text="Külastaja eesnimi" />
+            <TreeTableColumn fx:id="book_col_perenimi" prefWidth="162.0" text="Külastaja perekonnanimi" />
+            <TreeTableColumn fx:id="book_col_tuba" prefWidth="75.0" text="Tuba" />
+            <TreeTableColumn fx:id="book_col_alg_aeg" prefWidth="107.0" text="Alg_aeg" />
+            <TreeTableColumn fx:id="book_col_lopp_aeg" prefWidth="107.0" text="Lõpp_aeg" />
+        </columns>
+      </TreeTableView>
+   </children>
+</AnchorPane>

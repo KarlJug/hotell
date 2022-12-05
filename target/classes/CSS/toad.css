@@ -1,0 +1,42 @@
+.main {
+    -fx-background-color: #FFFFFF;
+}
+
+/* tekst pildi all */
+.container {
+    -fx-alignment: center_left;
+    -fx-background-color: #3a4660;
+    -fx-font-size: 1.1em;
+    -fx-effect: dropshadow(three-pass-box, #ba6c4d, 5, 0, 1, 5);
+}
+
+.container:hover {
+    -fx-effect: dropshadow(three-pass-box, #ff9e6a, 20, 0, 2, 6);
+}
+
+/* Vbox mille sees on test ja nupp */
+.vcontainer {
+    -fx-padding: 20 10 10 30;
+    -fx-spacing: 20;
+}
+
+.container Label {
+    -fx-text-fill: #FFFFFF;
+}
+
+/* nupp */
+
+.container Button {
+    -fx-pref-width: 200;
+    -fx-pref-height: 40;
+    -fx-background-color: #ed8a63;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 1.1em;
+    -fx-alignment: center;
+    -fx-background-radius: 0em;
+}
+
+.container Button:hover {
+    cursor: hand;
+    -fx-background-color: #ff9e6a;
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="262.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hbs.hotell.controllers.admin.lisa.AddBookingController">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="262.0">
+         <children>
+            <Label text="Tekita uus">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <Label text="Külastaja eesnimi" />
+            <TextField fx:id="lisa2" />
+            <Label text="Külastaja perekonnanimi" />
+            <TextField fx:id="lisa1" />
+            <Label text="Tuba" />
+            <TextField fx:id="lisa3" />
+            <Label text="Tuba" />
+            <TextField />
+            <Button mnemonicParsing="false" text="Kinnita" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

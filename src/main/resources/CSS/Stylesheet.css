@@ -1,0 +1,52 @@
+.root {
+    -fx-background-color: #c4dbe0;
+}
+
+.label {
+    -fx-font-size: 18;
+    -fx-font-family: "Lucida Console";
+    /*-fx-text-fill: #bababa;*/
+}
+
+.button {
+    -fx-background-color: #2eb5e0;
+    -fx-background-radius: 0em;
+    -fx-font-family: "Lucida Console";
+}
+
+.button:hover {
+    -fx-background-color: #238bad;
+}
+
+.button:pressed {
+    -fx-background-color: #18627a;
+}
+
+.button:focused {
+    -fx-background-color: #18627a;
+    -fx-border-width: 0px 0px 0px 5px;
+    -fx-border-color: #cdd1d6;
+}
+
+#vertbox {
+    -fx-background-color: #2eb5e0;
+}
+
+#horosontboz {
+    -fx-background-color: #00a8a8;
+}
+
+#logoLabel {
+    -fx-font-size: 25;
+    -fx-font-family: "Monotype Corsiva";
+}
+
+#otsing {
+    -fx-background-color: #898982;
+    -fx-background-radius: 3em;
+
+}
+
+.table-view {
+    -fx-background-color: #c4dbe0;
+}
