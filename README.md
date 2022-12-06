@@ -41,6 +41,7 @@ CREATE SEQUENCE hotell_toad_seq;
 CREATE TABLE toad (
 	id bigint NOT NULL DEFAULT nextval('hotell_toad_seq'),
 	toa_num integer DEFAULT NULL,
+	toa_type integer DEFAULT NULL,
 	voodikohtade_arv integer DEFAULT NULL,
 	hind integer DEFAULT NULL,
 	broneeritud boolean DEFAULT FALSE,
