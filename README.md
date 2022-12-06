@@ -36,16 +36,17 @@ CREATE TABLE kliendid (
 ### Tekst toad
 
 ```
-CREATE SEQUENCE hotell_kliendi_seq;
+CREATE SEQUENCE hotell_toad_seq;
 
-CREATE TABLE kliendid (
-	id bigint NOT NULL DEFAULT nextval('hotell_kliendi_seq'),
+CREATE TABLE toad (
+	id bigint NOT NULL DEFAULT nextval('hotell_toad_seq'),
 	toa_num integer DEFAULT NULL,
 	voodikohtade_arv integer DEFAULT NULL,
 	hind integer DEFAULT NULL,
+	broneeritud boolean DEFAULT FALSE,
 	broneeria_eesnimi varchar(50) DEFAULT NULL,
 	broneeria_perekonnanimi varchar(50) DEFAULT NULL,
-	PRIMARY KEY (kliendi_id)
+	PRIMARY KEY (id)
 );
 ```
 
@@ -60,16 +61,16 @@ CREATE TABLE kliendid (
 ### Tekst broneeringud
 
 ```
-CREATE SEQUENCE hotell_kliendi_seq;
+CREATE SEQUENCE hotell_broneeringud_seq;
 
-CREATE TABLE kliendid (
-	id bigint NOT NULL DEFAULT nextval('hotell_kliendi_seq'),
-	külastaja_eesnimi varchar(50) DEFAULT NULL,
-	külastaja_perekonnanimi varchar(50) DEFAULT NULL,
+CREATE TABLE broneeringud (
+	id bigint NOT NULL DEFAULT nextval('hotell_broneeringud_seq'),
+	kÃ¼lastaja_eesnimi varchar(50) DEFAULT NULL,
+	kÃ¼lastaja_perekonnanimi varchar(50) DEFAULT NULL,
 	tuba integer DEFAULT NULL,
 	alg_aeg date DEFAULT NULL,
-	lõpp_aeg date DEFAULT NULL,
-	PRIMARY KEY (kliendi_id)
+	lÃµpp_aeg date DEFAULT NULL,
+	PRIMARY KEY (id)
 );
 ```
 &#8595; Mis tekitab sellise tabeli &#8595;
