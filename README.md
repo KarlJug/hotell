@@ -50,7 +50,7 @@ CREATE TABLE toad (
 	PRIMARY KEY (id)
 );
 
-
+// genereerib mõned toad andmebaasi
 insert into public.toad(
 	toa_num, toa_type, voodikohtade_arv, hind)
 	VALUES (101, 3, 2, 300), (102, 3, 2, 300), (103, 2, 2, 500), (104, 3, 2, 300), (105, 3, 2, 300), (106, 2, 2, 500), (107, 4, 1, 200),
