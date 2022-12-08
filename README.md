@@ -87,7 +87,7 @@ CREATE TABLE broneeringud (
 	kulastaja_perekonnanimi varchar(50) DEFAULT NULL,
 	tuba integer DEFAULT NULL,
 	alg_aeg date DEFAULT NULL,
-	lÃµpp_aeg date DEFAULT NULL,
+	lopp_aeg date DEFAULT NULL,
 	PRIMARY KEY (id)
 );
 ```
