@@ -17,7 +17,7 @@
 /* Vbox mille sees on test ja nupp */
 .vcontainer {
     -fx-padding: 20 10 10 30;
-    -fx-spacing: 20;
+    -fx-spacing: 13;
 }
 
 .container Label {
