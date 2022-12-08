@@ -29,7 +29,7 @@ public class BookARoomController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        if (date_start.getValue() != null) {
+        if (date_start.getValue() == null) {
             date_end.setOnAction(event -> calculatePrice());
         }
 
