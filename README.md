@@ -45,8 +45,8 @@ CREATE TABLE toad (
 	voodikohtade_arv integer DEFAULT NULL,
 	hind integer DEFAULT NULL,
 	broneeritud boolean DEFAULT FALSE,
-	broneeria_eesnimi varchar(50) DEFAULT NULL,
-	broneeria_perekonnanimi varchar(50) DEFAULT NULL,
+	broneeria_eesnimi varchar(30) DEFAULT NULL,
+	broneeria_perekonnanimi varchar(30) DEFAULT NULL,
 	PRIMARY KEY (id)
 );
 
@@ -83,8 +83,8 @@ CREATE SEQUENCE hotell_broneeringud_seq;
 
 CREATE TABLE broneeringud (
 	id bigint NOT NULL DEFAULT nextval('hotell_broneeringud_seq'),
-	kulastaja_eesnimi varchar(50) DEFAULT NULL,
-	kulastaja_perekonnanimi varchar(50) DEFAULT NULL,
+	kulastaja_eesnimi varchar(30) DEFAULT NULL,
+	kulastaja_perekonnanimi varchar(30) DEFAULT NULL,
 	tuba integer DEFAULT NULL,
 	alg_aeg date DEFAULT NULL,
 	lopp_aeg date DEFAULT NULL,
