@@ -83,8 +83,8 @@ CREATE SEQUENCE hotell_broneeringud_seq;
 
 CREATE TABLE broneeringud (
 	id bigint NOT NULL DEFAULT nextval('hotell_broneeringud_seq'),
-	kÃ¼lastaja_eesnimi varchar(50) DEFAULT NULL,
-	kÃ¼lastaja_perekonnanimi varchar(50) DEFAULT NULL,
+	kulastaja_eesnimi varchar(50) DEFAULT NULL,
+	kulastaja_perekonnanimi varchar(50) DEFAULT NULL,
 	tuba integer DEFAULT NULL,
 	alg_aeg date DEFAULT NULL,
 	lÃµpp_aeg date DEFAULT NULL,
@@ -93,7 +93,7 @@ CREATE TABLE broneeringud (
 ```
 &#8595; Mis tekitab sellise tabeli &#8595;
 
-| id 	 | külastaja_eesnimi | külastaja_perekonnanimi | tuba          | alg_aeg    | lõpp_aeg   |
+| id 	 | kulastaja_eesnimi | kulastaja_perekonnanimi | tuba          | alg_aeg    | lõpp_aeg   |
 | ------:|:-----------------:|:-----------------------:|:-------------:|:----------:|:----------:|
 | 1      | Nimi              | Perekonnanimi           | perekond      | DD.MM.YYYY | DD.MM.YYYY |
 
