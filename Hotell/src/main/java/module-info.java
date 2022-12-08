@@ -10,6 +10,7 @@ module com.hbs.hotell {
     exports com.hbs.hotell;
     exports com.hbs.hotell.controllers;
     exports com.hbs.hotell.controllers.admin;
+    exports com.hbs.hotell.controllers.lisa;
     exports com.hbs.hotell.DB;
     exports com.hbs.hotell.util;
     exports com.hbs.hotell.vaade;

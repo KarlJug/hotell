@@ -2,7 +2,6 @@ package com.hbs.hotell.vaade;
 
 import com.hbs.hotell.controllers.ClientController;
 import com.hbs.hotell.controllers.admin.AdminController;
-import com.hbs.hotell.controllers.admin.KlientController;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXMLLoader;
@@ -116,6 +115,16 @@ public class ViewFactory {
 
     public void showAddClient() {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/admin/lisa/lisa-klient.fxml"));
+        createStage(loader);
+    }
+
+    public void showBooking() {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/kasutaja/lisa/book-room.fxml"));
+        createStage(loader);
+    }
+
+    public void showAddRoom() {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/admin/lisa/lisa-ruum.fxml"));
         createStage(loader);
     }
 

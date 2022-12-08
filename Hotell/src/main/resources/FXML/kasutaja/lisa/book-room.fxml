@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="350.0" stylesheets="@../../../CSS/login.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hbs.hotell.controllers.lisa.BookARoomController">
+   <VBox alignment="CENTER" layoutX="117.0" prefHeight="200.0" prefWidth="100.0" spacing="15.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Broneeri">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Text>
+      <TextField fx:id="nimi_tfd" promptText="Nimi" />
+      <TextField fx:id="pere_nimi_tfd" promptText="Perekonnanimi" />
+      <TextField fx:id="isikukood_tfd" promptText="isikukood" />
+      <TextField fx:id="email_tfd" promptText="Email" />
+      <HBox prefHeight="0.0" prefWidth="330.0">
+         <DatePicker fx:id="date_start" promptText="Broneeringu algus" showWeekNumbers="true" />
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" __ " />
+         <DatePicker fx:id="date_end" promptText="Broneeringu  lõpp" showWeekNumbers="true" />
+      </HBox>
+      <HBox prefHeight="47.0" prefWidth="330.0" spacing="10.0">
+         <Pane prefHeight="91.0" prefWidth="95.0" />
+         <VBox prefHeight="200.0" prefWidth="100.0">
+            <Label fx:id="price_lbl" text="Hind: " />
+            <Label fx:id="beds_num_lbl" text="Voodite arv: " />
+         </VBox>
+         <Line endY="30.0" />
+         <VBox prefHeight="200.0" prefWidth="100.0">
+            <Label fx:id="calculate_lbl" text="1 tuba x night" />
+            <Label fx:id="price_night_lbl" text="Kokku: " />
+         </VBox>
+      </HBox>
+      <Button fx:id="broneeri_btn" mnemonicParsing="false" text="Broneeri" />
+   </VBox>
+</AnchorPane>

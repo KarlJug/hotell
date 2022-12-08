@@ -1,11 +1,15 @@
 package com.hbs.hotell.DB;
 
 import com.hbs.hotell.util.DataAccessObject;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class KlientDAO extends DataAccessObject<Klient> {
@@ -15,7 +19,6 @@ public class KlientDAO extends DataAccessObject<Klient> {
             "isikukood, email) VALUES (?, ?, ?, ?)";
 
     // Teeb SELECT query mis leiab kliendi id järgi kliendi ja valib selle info
-
     private static final String GET_ONE = "SELECT kliendi_id, eesnimi, pere_nimi, " +
             "isikukood, email FROM kliendid WHERE kliendi_id = ?";
 
@@ -25,6 +28,9 @@ public class KlientDAO extends DataAccessObject<Klient> {
 
     // Teeb DELETE query-s mis leiab kasutaja id järgi kliendi ja kustutab selle
     private static final String DELETE = "DELETE FROM kliendid WHERE kliendi_id = ?";
+
+    // query mis valib kõik
+    private static final String SELECT = "SELECT * FROM kliendid";
 
 
     public KlientDAO(Connection connection) {
@@ -53,8 +59,27 @@ public class KlientDAO extends DataAccessObject<Klient> {
     }
 
     @Override
-    public List findAll() {
-        return null;
+    public ObservableList<Klient> findAll() {
+        ObservableList<Klient> list = FXCollections.observableArrayList();
+
+        try (PreparedStatement statement = this.connection.prepareStatement(SELECT)) {
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                Klient klient = new Klient();
+
+                klient.setId(rs.getLong("kliendi_id"));
+                klient.setEesnimi(rs.getString("eesnimi"));
+                klient.setPere_nimi(rs.getString("pere_nimi"));
+                klient.setIsikukood(rs.getString("isikukood"));
+                klient.setEmail(rs.getString("email"));
+
+                list.add(klient);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+        return list;
     }
 
     @Override

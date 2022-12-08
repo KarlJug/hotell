@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="289.0" stylesheets="@../../../CSS/lisa.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hbs.hotell.controllers.admin.lisa.AddRoomController">
+   <VBox prefHeight="400.0" prefWidth="262.0" styleClass="main" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Label text="Lisa ruum">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label text="Ruumi number" />
+      <TextField fx:id="ruum_num_tfd" />
+      <Label text="Ruumi tüüp" />
+      <ComboBox fx:id="type_cbb" prefWidth="150.0" />
+      <Label text="Hind" />
+      <TextField fx:id="hind_tfd" />
+      <Pane prefHeight="0.0" prefWidth="249.0" />
+      <Button fx:id="kinnita_btn" mnemonicParsing="false" text="Kinnita" />
+      <Text fx:id="error" strokeType="OUTSIDE" strokeWidth="0.0" />
+   </VBox>
+</AnchorPane>

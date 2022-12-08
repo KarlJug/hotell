@@ -5,8 +5,8 @@ import com.hbs.hotell.util.DataTransferObject;
 public class Klient implements DataTransferObject {
 
     private long id;
-
     private String eesnimi, pere_nimi, isikukood, email;
+
 
     public void setId(long id) {
         this.id = id;
