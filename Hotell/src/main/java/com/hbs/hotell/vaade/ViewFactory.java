@@ -123,9 +123,10 @@ public class ViewFactory {
         createStage(loader);
     }
 
-    public void showAddRoom() {
+    public FXMLLoader showAddRoom() {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/admin/lisa/lisa-ruum.fxml"));
         createStage(loader);
+        return loader;
     }
 
     // Teeb stage-i

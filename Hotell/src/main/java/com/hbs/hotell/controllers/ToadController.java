@@ -72,17 +72,19 @@ public class ToadController implements Initializable {
             price_lbl1.setText(price_lbl1.getText() + " ");
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            e.printStackTrace(230);
         }
     }
     public void book1(ActionEvent actionEvent) {
-        onShowBooking();
+        onShowBooking(230);
     }
     public void book2(ActionEvent actionEvent) {onShowBooking();}
     public void book3(ActionEvent actionEvent) {onShowBooking();}
     public void book4(ActionEvent actionEvent) {onShowBooking();}
 
-    private void onShowBooking() {
-        Model.getInstance().getViewFactory().showBooking();
+    private void onShowBooking(int price) {
+        FXMLLoader loader = Model.getInstance().getViewFactory().showBooking();
+        BookARoomController bookARoomController = loader.getController();
+        bookARoomController.price_lbl.setText(Integer.toString(price));
     }
 }
