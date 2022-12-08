@@ -51,7 +51,6 @@ public class BookARoomController implements Initializable {
         }
 
 
-
     }
 
 
@@ -75,6 +74,14 @@ public class BookARoomController implements Initializable {
             klient.setPere_nimi(pere_nimi_tfd.getText());
             klient.setIsikukood(isikukood_tfd.getText());
             klient.setEmail(email_tfd.getText());
+
+            broneering.setKulastaja_eesnimi(nimi_tfd.getText());
+            broneering.setKulastaja_perekonnanimi(pere_nimi_tfd.getText());
+            // ei tea veel kuidas seda teha
+            //broneering.setTuba();
+            broneering.setAlg_aeg(date_start.getValue());
+            broneering.setLõpp_aeg(date_end.getValue());
+
             
             if (klientDAO.findByPersonalCode(klient.getIsikukood())) {
                 exists = true;
