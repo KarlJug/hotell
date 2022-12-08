@@ -22,6 +22,9 @@ public class KlientDAO extends DataAccessObject<Klient> {
     private static final String GET_ONE = "SELECT kliendi_id, eesnimi, pere_nimi, " +
             "isikukood, email FROM kliendid WHERE kliendi_id = ?";
 
+    private static final String GET_ONE_BY_CODE = "SELECT kliendi_id, eesnimi, pere_nimi, " +
+            "isikukood, email FROM kliendid WHERE isikukood = ?";
+
     // Teeb UPDATE query mis leiab kliendi id järgi kliendi ja uuendab infot
     private static final String UPDATE = "UPDATE kliendid SET eesnimi = ?, pere_nimi = ?, " +
             "isikukood = ?, email = ? WHERE kliendi_id = ?";
@@ -56,6 +59,33 @@ public class KlientDAO extends DataAccessObject<Klient> {
             throw new RuntimeException(e);
         }
         return klient;
+    }
+
+    public boolean findByPersonalCode(String personalCode) {
+        Klient klient = new Klient();
+        try (PreparedStatement statement = this.connection.prepareStatement(GET_ONE_BY_CODE)) {
+            statement.setString(1, personalCode);
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                klient.setId(rs.getLong("kliendi_id"));
+                klient.setEesnimi(rs.getString("eesnimi"));
+                klient.setPere_nimi(rs.getString("pere_nimi"));
+                klient.setIsikukood(rs.getString("isikukood"));
+                klient.setEmail(rs.getString("email"));
+
+                if (personalCode == klient.getIsikukood()) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+        return false;
     }
 
     @Override

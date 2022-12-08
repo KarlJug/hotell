@@ -29,9 +29,11 @@ public class BookARoomController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        if (date_start.getValue() == null) {
+        if (date_start.getValue() != "") {
             date_end.setOnAction(event -> calculatePrice());
         }
+
+        broneeri_btn.setOnAction(event -> onConfirm());
 
     }
 
@@ -43,22 +45,51 @@ public class BookARoomController implements Initializable {
         int days = period.getDays();
 
         if (days > 1) {
-            calculate_lbl.setText("1 room x " + days + " nights");
+            calculate_lbl.setText("1 tuba x " + days + " ööd");
         } else {
-            calculate_lbl.setText("1 room x " + days + " night");
+            calculate_lbl.setText("1 tuba x " + days + " öö");
         }
+
+
 
     }
 
 
     private void onConfirm() {
-        Klient klient = new Klient();
-        klient.setEesnimi(nimi_tfd.getText());
-        klient.setPere_nimi(pere_nimi_tfd.getText());
-        klient.setIsikukood(isikukood_tfd.getText());
-        klient.setEmail(email_tfd.getText());
 
+        DatabaseConnectionManager dcm = new DatabaseConnectionManager("localhost", "hotell",
+            "postgres", "Passw0rd");
+
+        boolean isValid = false, exists = false;
+        try {
+            Connection connection = dcm.getConnection();
+            HotellitubaDAO hotellitubaDAO = new HotellitubaDAO(connection);
+            KlientDAO klientDAO = new KlientDAO(connection);
+            BroneeringDAO broneeringDAO = new BroneeringDAO(connection);
+
+            Hotellituba tuba = new Hotellituba();
+            Broneering broneering = new Broneering();
+            Klient klient = new Klient();
+
+            klient.setEesnimi(nimi_tfd.getText());
+            klient.setPere_nimi(pere_nimi_tfd.getText());
+            klient.setIsikukood(isikukood_tfd.getText());
+            klient.setEmail(email_tfd.getText());
+            
+            if (klientDAO.findByPersonalCode(klient.getIsikukood())) {
+                exists = true;
+            }
+
+            if (isValid && !exists) {
+                klientDAO.create(klient);
+                broneeringDAO.create(broneering);
+            }
+            else if (isValid && exists) {
+                broneeringDAO.create(broneering);
+            }
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
-
-
 }
