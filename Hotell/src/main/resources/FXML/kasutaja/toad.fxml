@@ -20,7 +20,7 @@
                   </ImageView>
                   <VBox prefHeight="200.0" prefWidth="100.0" styleClass="vcontainer" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                      <Label fx:id="bed_num_lbl2" text="Voodite arv: 3" />
-                     <Label fx:id="price_lbl2" text="Hind: 700" />
+                     <Label fx:id="price_lbl2" text="Hind: 114" />
                      <Label fx:id="free_rooms_num2" text="Vabu tube:" />
                      <Line endX="200.0" />
                      <Button fx:id="book_btn2" mnemonicParsing="false" onAction="#book1" text="Broneeri" />
@@ -32,7 +32,7 @@
                   </ImageView>
                   <VBox layoutX="82.0" layoutY="178.0" prefHeight="200.0" prefWidth="100.0" styleClass="vcontainer" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                      <Label fx:id="bed_num_lbl1" text="Voodite arv: 2" />
-                     <Label fx:id="price_lbl1" text="Hind: 500" />
+                     <Label fx:id="price_lbl1" text="Hind: 230" />
                      <Label fx:id="free_rooms_num" text="Vabu tube:" />
                      <Line endX="200.0" />
                      <Button fx:id="book_btn1" mnemonicParsing="false" onAction="#book2" text="Broneeri" />
@@ -52,7 +52,7 @@
                      <VBox prefHeight="200.0" prefWidth="100.0" styleClass="vcontainer" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                         <children>
                            <Label fx:id="bed_num_lbl3" text="Voodite arv: 2" />
-                           <Label fx:id="price_lbl3" text="Hind: 300" />
+                           <Label fx:id="price_lbl3" text="Hind: 105" />
                            <Label fx:id="free_rooms_num3" text="Vabu tube:" />
                            <Line endX="200.0" />
                            <Button fx:id="book_btn3" mnemonicParsing="false" onAction="#book3" text="Broneeri" />
@@ -70,7 +70,7 @@
                      <VBox layoutX="82.0" layoutY="178.0" prefHeight="200.0" prefWidth="100.0" styleClass="vcontainer" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                         <children>
                            <Label fx:id="bed_num_lbl4" text="Voodite arv: 1" />
-                           <Label fx:id="price_lbl4" text="Hind: 200" />
+                           <Label fx:id="price_lbl4" text="Hind: 87" />
                            <Label fx:id="free_rooms_num4" text="Vabu tube:" />
                            <Line endX="200.0" />
                            <Button fx:id="book_btn4" mnemonicParsing="false" onAction="#book4" text="Broneeri" />
