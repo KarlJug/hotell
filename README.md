@@ -12,10 +12,11 @@
 ## andmebaas
 
 - Andmebaasiks kasutan postgresql
-- Teha andmebaas nimega hotell ja copy past-ida query-sse järgmised käsud
+- Teha andmebaas nimega hotell
 - ip address panna - localhost
 - Kasutaja nimeks panna - postgres
 - Parooliks panna - Passw0rd
+- Ja copy past-ida query-sse järgmised käsud
 
 <details><summary>SQL query kood</summary>
 <p>
