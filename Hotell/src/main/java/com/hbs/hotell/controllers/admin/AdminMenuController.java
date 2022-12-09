@@ -22,7 +22,7 @@ public class AdminMenuController implements Initializable {
         logout_btn.setOnAction(event -> onLogout());
     }
 
-
+    // vastavalt nuppule saadab sõnumi AdminController-ile
     private void onBooked() {
         Model.getInstance().getViewFactory().getAdminSelectMenuItem().set("Booked");
     }
@@ -32,13 +32,13 @@ public class AdminMenuController implements Initializable {
     private void onClients() {
         Model.getInstance().getViewFactory().getAdminSelectMenuItem().set("Clients");
     }
-
+    // ^^^^^
     private void addListeners() {
         kliendid_btn.setOnAction(event -> onClients());
         broneeringud_ptn.setOnAction(event -> onBooked());
         hotellitoad_btn.setOnAction(event -> onRooms());
     }
-
+    // kui logi välja nuppu vajutad siis paneb selle paneeli kinni ja läheb kliendi broneeringu vaatesse
     private void onLogout() {
         Stage stage = (Stage) logout_btn.getScene().getWindow();
         Model.getInstance().getViewFactory().closeStage(stage);
