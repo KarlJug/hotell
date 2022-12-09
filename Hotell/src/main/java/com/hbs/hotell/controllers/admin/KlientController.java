@@ -34,7 +34,7 @@ public class KlientController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        // seob väljale vastavalt väärtuse mille järgi saab õigele väljale õige andme anda
         client_col_id.setCellValueFactory(new PropertyValueFactory<>("id"));
         client_col_nimi.setCellValueFactory(new PropertyValueFactory<>("eesnimi"));
         client_col_pere_nimi.setCellValueFactory(new PropertyValueFactory<>("pere_nimi"));
@@ -54,7 +54,9 @@ public class KlientController implements Initializable {
         lisa_isik_btn.setOnAction(event -> onShowAddClient());
         muuda_isik_btn.setOnAction(event -> editClient());
     }
-
+    
+    // siin on vist viga ja kustuab. pean ülevaatama
+    // Peaks nuppu vajutusel akna avama kus saad uue kliendi lisada
     private void onShowAddClient() {
 
         ObservableList<Klient> klient, row;
@@ -67,7 +69,8 @@ public class KlientController implements Initializable {
 
         Model.getInstance().getViewFactory().showAddClient();
     }
-
+    
+    // Saab andmebaasist info kõigi klientide peale
     public ObservableList<Klient> columnData() {
         DatabaseConnectionManager dcm = new DatabaseConnectionManager("localhost", "hotell",
                 "postgres", "Passw0rd");
@@ -82,7 +85,8 @@ public class KlientController implements Initializable {
         }
         return null;
     }
-
+    
+    // muuda nuppule saadab info
     public void editClient() {
         FXMLLoader loader = Model.getInstance().getViewFactory().showEditClient();
         EditClientControlle editClientControlle = loader.getController();
@@ -99,7 +103,8 @@ public class KlientController implements Initializable {
 
         }
     }
-
+    
+    // kui topelt klikid nime peale saad seda muuta
     public void editFirsName(TableColumn.CellEditEvent cellEditEvent) {
         DatabaseConnectionManager dcm = new DatabaseConnectionManager("localhost", "hotell",
                 "postgres", "Passw0rd");
@@ -118,6 +123,7 @@ public class KlientController implements Initializable {
 
     }
 
+    // kui topelt klikid perekonnanime peale saad seda muuta
     public void editLastName(TableColumn.CellEditEvent cellEditEvent) {
         DatabaseConnectionManager dcm = new DatabaseConnectionManager("localhost", "hotell",
                 "postgres", "Passw0rd");
@@ -136,6 +142,7 @@ public class KlientController implements Initializable {
 
     }
 
+    // kui topelt klikid isikukoodi peale saad seda muuta
     public void editCode(TableColumn.CellEditEvent cellEditEvent) {
         DatabaseConnectionManager dcm = new DatabaseConnectionManager("localhost", "hotell",
                 "postgres", "Passw0rd");
@@ -157,6 +164,7 @@ public class KlientController implements Initializable {
 
     }
 
+    // kui topelt klikid emaili peale saad seda muuta
     public void editEmail(TableColumn.CellEditEvent cellEditEvent) {
         DatabaseConnectionManager dcm = new DatabaseConnectionManager("localhost", "hotell",
                 "postgres", "Passw0rd");
@@ -183,6 +191,8 @@ public class KlientController implements Initializable {
 
     }
 
+    // kui vajutad kustuta nuppu ja oled valinud kasutaja
+    // siis see kasutaja kustutakse andmebaasist
     public void deleteClient() {
 
         DatabaseConnectionManager dcm = new DatabaseConnectionManager("localhost", "hotell",
