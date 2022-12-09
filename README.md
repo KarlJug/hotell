@@ -95,7 +95,7 @@ CREATE TABLE broneeringud (
 
 | id 	 | kulastaja_eesnimi | kulastaja_perekonnanimi | tuba          | alg_aeg    | lõpp_aeg   |
 | ------:|:-----------------:|:-----------------------:|:-------------:|:----------:|:----------:|
-| 1      | Nimi              | Perekonnanimi           | perekond      | DD.MM.YYYY | DD.MM.YYYY |
+| 1      | Nimi              | Perekonnanimi           | 103      | DD.MM.YYYY | DD.MM.YYYY |
 
 ***
 
@@ -121,12 +121,11 @@ CREATE TABLE broneeringud (
 
 ## Kuidas kasutada
 
-1. kui andmebaasid on olemas, saab broneerida hotelli ruum nime, isikukoodiga ja emailiga.
-4. Admin paneeli saab läbi all vasakul oleva logi sisse nuppu.
+- kui andmebaasid on olemas, saab broneerida hotelli ruum nime, isikukoodiga ja emailiga.
+- Admin paneeli saab läbi all vasakul oleva logi sisse nuppu.
 - Kasutaiaid pole hetkel, aga kui vajutad sisene siis saad admin paneeli
 - admin paneelis saad valida näha broneeringuid, registreerituid kliente ja hotelli tubade kohta
-### registreeritud klientide menüü
+#### registreeritud klientide menüü
 - registreeritud klientide menüüs on võimalik topelt klõpsuga või valida klient ja vajutada "muuda" nuppu, et muuta kliendi infot
 - Kliendi saab kustutada kui vajutad kliendi lahtri peale ja kustuta nuppu
-
 - Teistel menüüdel ei ole seda funktsionaalsist veel
