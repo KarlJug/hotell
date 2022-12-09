@@ -56,8 +56,10 @@ public class EditClientControlle implements Initializable {
         if (!Validator.hasNumbers(id_fld.getText())) {
             error += "ID ei ole number";
         }
-
+        
+        // näitab errorit
         error_txt.setText(error);
+        // kui errorit pole siis on kõik õige / isValid = true
         isValid = (error.length() == 0);
 
         if (isValid) {
@@ -72,9 +74,10 @@ public class EditClientControlle implements Initializable {
             try {
                 Connection connection = dcm.getConnection();
                 KlientDAO klientDAO = new KlientDAO(connection);
-
+                // uuendab infot vastavalt ID-le (setID)
                 klientDAO.update(klient);
-
+                
+                // sulgeb akna
                 Stage stage = (Stage) kinnita_btn.getScene().getWindow();
                 Model.getInstance().getViewFactory().closeStage(stage);
 
