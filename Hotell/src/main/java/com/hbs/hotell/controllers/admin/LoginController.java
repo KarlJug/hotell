@@ -24,13 +24,15 @@ public class LoginController implements Initializable {
         login_btn.setOnAction(event -> onLogin());
         cancel_login_btn.setOnAction(event -> onCancel());
     }
-
+    
+    // Sulgeb akna ja avab admin paneeli
     private void onLogin() {
         Stage stage = (Stage) login_btn.getScene().getWindow();
         Model.getInstance().getViewFactory().closeStage(stage);
         Model.getInstance().getViewFactory().showAdminWindow();
     }
 
+    // Sulgeb akna ja avab broneeringu akna
     private void onCancel() {
         Stage stage = (Stage) login_btn.getScene().getWindow();
         Model.getInstance().getViewFactory().closeStage(stage);
