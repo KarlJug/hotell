@@ -12,6 +12,74 @@
 
 ### Teha andmepaas nimega hotell ja copy past-ida query-sse järgmised käsud
 
+<details><summary>SQL query kood</summary>
+<p>
+
+#### We can hide anything, even code!
+
+```
+-- kliendid
+CREATE SEQUENCE hotell_kliendi_seq;
+
+CREATE TABLE kliendid (
+	kliendi_id bigint NOT NULL DEFAULT nextval('hotell_kliendi_seq'),
+	eesnimi varchar(50) DEFAULT NULL,
+	pere_nimi varchar(50) DEFAULT NULL,
+	isikukood varchar(11) DEFAULT NULL,
+	email varchar(50) DEFAULT NULL,
+	PRIMARY KEY (kliendi_id)
+);
+	
+-- toad
+CREATE SEQUENCE hotell_toad_seq;
+
+CREATE TABLE toad (
+	id bigint NOT NULL DEFAULT nextval('hotell_toad_seq'),
+	toa_num integer DEFAULT NULL,
+	toa_type integer DEFAULT NULL,
+	voodikohtade_arv integer DEFAULT NULL,
+	hind integer DEFAULT NULL,
+	broneeritud boolean DEFAULT FALSE,
+	broneeria_eesnimi varchar(30) DEFAULT NULL,
+	broneeria_perekonnanimi varchar(30) DEFAULT NULL,
+	PRIMARY KEY (id)
+);
+
+-- genereerib mõned toad andmebaasi
+insert into public.toad(
+	toa_num, toa_type, voodikohtade_arv, hind)
+	VALUES (101, 2, 2, 114), (102, 3, 2, 105), (103, 3, 2, 105), (104, 1, 3, 230), (105, 4, 1, 87), (106, 3, 2, 105), (107, 2, 2, 114),
+	(108, 3, 2, 105), (109, 1, 3, 230), (110, 3, 2, 105), (111, 3, 2, 105), (112, 3, 2, 105), (113, 1, 3, 230), (114, 4, 1, 87),
+	(115, 1, 3, 230), (116, 2, 2, 114), (117, 1, 3, 230), (118, 3, 2, 105), (119, 1, 3, 230), (120, 2, 2, 114), (121, 4, 1, 87),
+	(122, 1, 3, 230), (123, 1, 3, 230), (124, 3, 2, 105), (125, 1, 3, 230), (126, 1, 3, 230), (127, 1, 3, 230), (128, 1, 3, 230),
+	(129, 1, 3, 230), (130, 3, 2, 105), (201, 2, 2, 114), (202, 1, 3, 230), (203, 2, 2, 114), (204, 2, 2, 114), (205, 2, 2, 114),
+	(206, 3, 2, 105), (207, 3, 2, 105), (208, 3, 2, 105), (209, 3, 2, 105), (210, 3, 2, 105), (211, 4, 1, 87), (212, 1, 3, 230),
+	(213, 1, 3, 230), (214, 4, 1, 87), (215, 1, 3, 230), (216, 1, 3, 230), (217, 2, 2, 114), (218, 1, 3, 230), (219, 1, 3, 230),
+	(220, 4, 1, 87), (221, 3, 2, 105), (222, 3, 2, 105), (223, 4, 1, 87), (224, 2, 2, 114), (225, 1, 3, 230), (226, 4, 1, 87),
+	(227, 2, 2, 114), (228, 4, 1, 87), (229, 1, 3, 230), (230, 1, 3, 230), (301, 1, 3, 230), (302, 2, 2, 114), (303, 2, 2, 114),
+	(304, 1, 3, 230), (305, 3, 2, 105), (306, 3, 2, 105), (307, 1, 3, 230), (308, 3, 2, 105), (309, 3, 2, 105), (310, 3, 2, 105),
+	(311, 2, 2, 114), (312, 1, 3, 230), (313, 3, 2, 105), (314, 1, 3, 230), (315, 2, 2, 114), (316, 2, 2, 114), (317, 4, 1, 87),
+	(318, 4, 1, 87), (319, 4, 1, 87), (320, 1, 3, 230), (321, 2, 2, 114), (322, 3, 2, 105), (323, 2, 2, 114), (324, 4, 1, 87),
+	(325, 2, 2, 114), (326, 1, 3, 230), (327, 1, 3, 230), (328, 4, 1, 87), (329, 4, 1, 87), (330, 2, 2, 114);
+
+-- broneeringud
+CREATE SEQUENCE hotell_broneeringud_seq;
+
+CREATE TABLE broneeringud (
+	id bigint NOT NULL DEFAULT nextval('hotell_broneeringud_seq'),
+	kulastaja_eesnimi varchar(30) DEFAULT NULL,
+	kulastaja_perekonnanimi varchar(30) DEFAULT NULL,
+	tuba integer DEFAULT NULL,
+	alg_aeg date DEFAULT NULL,
+	lopp_aeg date DEFAULT NULL,
+	PRIMARY KEY (id)
+);	
+```
+
+</p>
+</details>
+
+
 ```
 CREATE SEQUENCE hotell_kliendi_seq;
 
