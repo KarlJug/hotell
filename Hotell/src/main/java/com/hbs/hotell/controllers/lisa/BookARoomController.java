@@ -52,7 +52,8 @@ public class BookARoomController implements Initializable {
         LocalDate localDateStart = date_start.getValue();
         LocalDate localDateEnd = date_end.getValue();
         Period period = localDateStart.until(localDateEnd);
-
+        
+        // Vaatab mitme päevane vahe on valitud ajast
         int days = period.getDays();
 
         if (days > 1) {
@@ -71,9 +72,9 @@ public class BookARoomController implements Initializable {
         }
     }
 
-
+    // Kui vajutad nuppu
     private void onConfirm() {
-
+    
         DatabaseConnectionManager dcm = new DatabaseConnectionManager("localhost", "hotell",
                 "postgres", "Passw0rd");
 
@@ -130,20 +131,23 @@ public class BookARoomController implements Initializable {
                 broneering.setLopp_aeg(date_end.getValue());
 
             }
-
+            // kontrollib isikukoodiga kas isik on olemas
             if (isValid && klientDAO.findByPersonalCode(klient.getIsikukood())) {
                 exists = true;
             }
-
+            
+            // kui isikut pole siis bronnerib koos kasutaja lisamisega andme baasi
             if (isValid && !exists) {
                 klientDAO.create(klient);
                 broneeringDAO.create(broneering);
                 hotellitubaDAO.bookARoom(tuba.getToa_num(), tuba);
+            // kui isik on juba olemas siis ei lisa isikut aga proneerib ikka
             } else if (isValid && exists) {
                 broneeringDAO.create(broneering);
                 hotellitubaDAO.bookARoom(tuba.getToa_num(), tuba);
 
             }
+            // sulgeb kui kõik õige
             if (isValid) {
                 Stage stage = (Stage) broneeri_btn.getScene().getWindow();
                 Model.getInstance().getViewFactory().closeStage(stage);
