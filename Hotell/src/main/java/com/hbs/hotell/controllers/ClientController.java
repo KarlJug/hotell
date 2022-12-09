@@ -13,7 +13,7 @@ public class ClientController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        // kuulab getClientSelectMenuItem() mis nuppu ma seal vajutan ja vastavalt nuppule näitab seda pilti
+        // kuulab ClientController-it mis nuppu ma seal vajutan ja vastavalt nuppule näitab seda pilti
         Model.getInstance().getViewFactory().getClientSelectMenuItem().addListener((observableValue, oldVal, newVal) -> {
             switch (newVal) {
                 case "Booking" -> kasutaja_fxml_id.setCenter(Model.getInstance().getViewFactory().getBookingView());
