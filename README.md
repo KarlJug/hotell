@@ -11,7 +11,8 @@
 
 ## andmebaas
 
-### Teha andmepaas nimega hotell ja copy past-ida query-sse järgmised käsud
+- andmebaasiks kasutan postgresql
+- Teha andmepaas nimega hotell ja copy past-ida query-sse järgmised käsud
 
 <details><summary>SQL query kood</summary>
 <p>
