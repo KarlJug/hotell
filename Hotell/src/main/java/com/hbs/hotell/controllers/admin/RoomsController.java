@@ -34,7 +34,7 @@ public class RoomsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        // seob väljale vastavalt väärtuse mille järgi saab õigele väljale õige andme anda
         room_col_id.setCellValueFactory(new PropertyValueFactory<>("id"));
         room_col_num.setCellValueFactory(new PropertyValueFactory<>("toa_num"));
         room_col_type.setCellValueFactory(new PropertyValueFactory<>("toa_type"));
@@ -50,10 +50,11 @@ public class RoomsController implements Initializable {
         tableView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 
 
-
+        // teeb akna lahti kus saab uue ruumi lisada
         lisa_isik_btn.setOnAction(event -> Model.getInstance().getViewFactory().showAddRoom());
     }
 
+    // Võtab andmed andmebaasist
     private ObservableList<Hotellituba> columnData() {
         DatabaseConnectionManager dcm = new DatabaseConnectionManager("localhost", "hotell",
                 "postgres", "Passw0rd");
@@ -69,9 +70,12 @@ public class RoomsController implements Initializable {
         return null;
     }
 
+    // Ei tee midagi
+    // Peaks ruumi saama lisada
     public void addUserView(ActionEvent event) {
     }
-
+    // Ei tee midagi
+    // Peaks ruumi saama lisada
     public void refreshTable(ActionEvent event) {
     }
 }
