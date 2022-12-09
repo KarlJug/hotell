@@ -50,7 +50,7 @@ public class ToadController implements Initializable {
         try {
             Connection connection = dcm.getConnection();
             HotellitubaDAO hotellitubaDAO = new HotellitubaDAO(connection);
-
+            // leiab vastavalt toale kui paljud nendest on vabad
             free_rooms_num1.setText(free_rooms_num1.getText() + " " + hotellitubaDAO.findAllAvailable(1).size());
             free_rooms_num2.setText(free_rooms_num2.getText() + " " + hotellitubaDAO.findAllAvailable(2).size());
             free_rooms_num3.setText(free_rooms_num3.getText() + " " + hotellitubaDAO.findAllAvailable(3).size());
@@ -60,7 +60,7 @@ public class ToadController implements Initializable {
         }
     }
 
-    // poolik
+    // poolik ei kasuta peaks andme baasist hiinad võtma ja näitama
     public void getPrice() {
         DatabaseConnectionManager dcm = new DatabaseConnectionManager("localhost", "hotell",
                 "postgres", "Passw0rd");
@@ -76,6 +76,7 @@ public class ToadController implements Initializable {
         }
     }
 
+    // kui vajutad nuppu aktiveerib (book1 - book4) mis annab edasi info funktsioonile onShowBooking()
     public void book1(ActionEvent actionEvent) {
         String[] parts = price_lbl1.getText().split(" ");
         String price = parts[parts.length - 1];
