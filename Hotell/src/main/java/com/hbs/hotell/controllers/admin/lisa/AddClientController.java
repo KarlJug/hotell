@@ -42,7 +42,8 @@ public class AddClientController implements Initializable {
             KlientDAO klientDAO = new KlientDAO(connection);
             Klient klient = new Klient();
 
-            // vaja rohkem valideerimisi
+            // vaja rohkem valideerimisi 
+            // Ei tööta pean vahetama samaks mis on BookARoomController.java onConfirm() funktsioonis
             if (eesnimi.getText().length() <= 30) {
                 klient.setEesnimi(eesnimi.getText());
                 isValid = true;
@@ -67,12 +68,14 @@ public class AddClientController implements Initializable {
                 error.setText("Error: Email is not valid");
                 isValid = false;
             }
+            // Kui kõik õige siis tekitab uue kliendi
             if (isValid) { klientDAO.create(klient); }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
+        // kui kõik õige siis sulgeb akna
         if (isValid) {
             Stage stage = (Stage) kinnita_btn.getScene().getWindow();
             Model.getInstance().getViewFactory().closeStage(stage);
