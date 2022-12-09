@@ -16,7 +16,8 @@ public class DatabaseConnectionManager {
 
     private final String url;
     private final Properties properties;
-
+    
+    // tekitab ühenduse andmebaasiga
     public DatabaseConnectionManager(String host, String databaseName,
                                      String username, String password) {
 
@@ -30,26 +31,5 @@ public class DatabaseConnectionManager {
     public Connection getConnection() throws SQLException {
         return DriverManager.getConnection(this.url, this.properties);
     }
-
-
-    /*
-    public Connection getDatabaseLink() {
-        String databaseName = "test_info";
-        String databaseUser = "root";
-        String databasePassword = "Passw0rd";
-        String url = "jdbc:mysql://localhost/" + databaseName;
-
-
-
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            databaseLink = DriverManager.getConnection(url, databaseUser, databasePassword);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return databaseLink;
-    }
-     */
-
 
 }
