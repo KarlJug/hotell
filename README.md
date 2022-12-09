@@ -70,9 +70,9 @@ insert into public.toad(
 
 &#8595; Mis tekitab sellise tabeli &#8595;
 
-| id	 | toa_num       | voodikohtade_arv | hind | broneeria_eesnimi | broneeria_perekonnanimi |
-| ------:|:-------------:|-----------------:|-----:|:-----------------:|:-----------------------:|
-| 1      | Nimi          | 3                | 500  | Nimi	       | Perekonnanimi	         |
+| id	 | toa_num       | toa_type | voodikohtade_arv | hind | broneeritud | broneeria_eesnimi | broneeria_perekonnanimi |
+| ------:|:-------------:|---------:|-----------------:|-----:|:-----------:|:-----------------:|:-----------------------:|
+| 1      | Nimi          |         2| 3                | 500  | false       | Nimi	        | Perekonnanimi           |
 
 ***
 
@@ -119,3 +119,14 @@ CREATE TABLE broneeringud (
 2. ViewFactory class-ile lisada sellele uue vaate privat Anchorpane controller ja teha getter method
 3. Controllerisse saab lisada functsioone selle vaate nuppudele
 
+## Kuidas kasutada
+
+1. kui andmebaasid on olemas, saab broneerida hotelli ruum nime, isikukoodiga ja emailiga.
+4. Admin paneeli saab läbi all vasakul oleva logi sisse nuppu.
+- Kasutaiaid pole hetkel, aga kui vajutad sisene siis saad admin paneeli
+- admin paneelis saad valida näha broneeringuid, registreerituid kliente ja hotelli tubade kohta
+### registreeritud klientide menüü
+- registreeritud klientide menüüs on võimalik topelt klõpsuga või valida klient ja vajutada "muuda" nuppu, et muuta kliendi infot
+- Kliendi saab kustutada kui vajutad kliendi lahtri peale ja kustuta nuppu
+
+- Teistel menüüdel ei ole seda funktsionaalsist veel
