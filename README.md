@@ -11,8 +11,10 @@
 
 ## andmebaas
 
-- andmebaasiks kasutan postgresql
+- Andmebaasiks kasutan postgresql
 - Teha andmepaas nimega hotell ja copy past-ida query-sse järgmised käsud
+- Kasutaja nimeks panna postgres
+- Parooliks panna Passw0rd
 
 <details><summary>SQL query kood</summary>
 <p>
