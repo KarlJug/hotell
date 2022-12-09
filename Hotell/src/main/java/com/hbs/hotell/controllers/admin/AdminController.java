@@ -13,7 +13,7 @@ public class AdminController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        // kuulab getAdminSelectMenuItem() mis nuppu ma seal vajutan ja vastavalt nuppule näitab seda pilti
+        // kuulab AdminMenuController mis nuppu ma seal vajutan ja vastavalt nuppule näitab seda pilti
         Model.getInstance().getViewFactory().getAdminSelectMenuItem().addListener((observableValue, oldVal, newVal) -> {
             switch (newVal) {
                 case "Booked" -> admin_fxml_id.setCenter(Model.getInstance().getViewFactory().getBookedView());
