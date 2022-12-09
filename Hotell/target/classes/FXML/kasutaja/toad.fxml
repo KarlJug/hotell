@@ -9,77 +9,73 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="830.0" prefWidth="630.0" stylesheets="@../../CSS/toad.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hbs.hotell.controllers.ToadController">
-   <VBox prefHeight="831.0" prefWidth="610.0" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
-      <children>
-         <HBox prefHeight="399.0" prefWidth="630.0" spacing="10.0">
-            <children>
-               <AnchorPane prefHeight="380.0" prefWidth="300.0" styleClass="container">
-                  <ImageView fitHeight="209.0" fitWidth="300.0" layoutX="-22.0" layoutY="-30.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <Image url="@../../pictures/hotel-room2.png" />
-                  </ImageView>
-                  <VBox prefHeight="200.0" prefWidth="100.0" styleClass="vcontainer" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-                     <Label fx:id="bed_num_lbl2" text="Voodite arv: 3" />
-                     <Label fx:id="price_lbl2" text="Hind: 700" />
-                     <Label fx:id="free_rooms_num2" text="Vabu tube:" />
-                     <Line endX="200.0" />
-                     <Button fx:id="book_btn2" mnemonicParsing="false" onAction="#book1" text="Broneeri" />
-                  </VBox>
-               </AnchorPane>
-               <AnchorPane prefHeight="380.0" prefWidth="300.0" styleClass="container">
-                  <ImageView fitHeight="189.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <Image url="@../../pictures/hotel-room.png" />
-                  </ImageView>
-                  <VBox layoutX="82.0" layoutY="178.0" prefHeight="200.0" prefWidth="100.0" styleClass="vcontainer" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-                     <Label fx:id="bed_num_lbl1" text="Voodite arv: 2" />
-                     <Label fx:id="price_lbl1" text="Hind: 500" />
-                     <Label fx:id="free_rooms_num" text="Vabu tube:" />
-                     <Line endX="200.0" />
-                     <Button fx:id="book_btn1" mnemonicParsing="false" onAction="#book2" text="Broneeri" />
-                  </VBox>
-               </AnchorPane>
-            </children>
-         </HBox>
-         <HBox prefHeight="399.0" prefWidth="630.0" spacing="10.0">
-            <children>
-               <AnchorPane prefHeight="380.0" prefWidth="300.0" styleClass="container">
-                  <children>
-                     <ImageView fitHeight="209.0" fitWidth="300.0" layoutX="-22.0" layoutY="-30.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                        <image>
-                           <Image url="@../../pictures/2-bed-hotel.png" />
-                        </image>
-                     </ImageView>
-                     <VBox prefHeight="200.0" prefWidth="100.0" styleClass="vcontainer" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-                        <children>
-                           <Label fx:id="bed_num_lbl3" text="Voodite arv: 2" />
-                           <Label fx:id="price_lbl3" text="Hind: 300" />
-                           <Label fx:id="free_rooms_num3" text="Vabu tube:" />
-                           <Line endX="200.0" />
-                           <Button fx:id="book_btn3" mnemonicParsing="false" onAction="#book3" text="Broneeri" />
-                        </children>
-                     </VBox>
-                  </children>
-               </AnchorPane>
-               <AnchorPane prefHeight="380.0" prefWidth="300.0" styleClass="container">
-                  <children>
-                     <ImageView fitHeight="189.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                        <image>
-                           <Image url="@../../pictures/hotel-bedroom.png" />
-                        </image>
-                     </ImageView>
-                     <VBox layoutX="82.0" layoutY="178.0" prefHeight="200.0" prefWidth="100.0" styleClass="vcontainer" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-                        <children>
-                           <Label fx:id="bed_num_lbl4" text="Voodite arv: 1" />
-                           <Label fx:id="price_lbl4" text="Hind: 200" />
-                           <Label fx:id="free_rooms_num4" text="Vabu tube:" />
-                           <Line endX="200.0" />
-                           <Button fx:id="book_btn4" mnemonicParsing="false" onAction="#book4" text="Broneeri" />
-                        </children>
-                     </VBox>
-                  </children>
-               </AnchorPane>
-            </children>
-         </HBox>
-      </children>
-   </VBox>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="830.0"
+            prefWidth="630.0" stylesheets="@../../CSS/toad.css" xmlns="http://javafx.com/javafx/19"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hbs.hotell.controllers.ToadController">
+    <VBox prefHeight="831.0" prefWidth="610.0" spacing="10.0" AnchorPane.bottomAnchor="10.0"
+          AnchorPane.leftAnchor="10.0"
+          AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+        <HBox prefHeight="399.0" prefWidth="630.0" spacing="10.0">
+            <AnchorPane prefHeight="380.0" prefWidth="300.0" styleClass="container">
+                <ImageView fitHeight="209.0" fitWidth="300.0" layoutX="-22.0" layoutY="-30.0" pickOnBounds="true"
+                           preserveRatio="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <Image url="@../../pictures/hotel-room2.png"/>
+                </ImageView>
+                <VBox prefHeight="200.0" prefWidth="100.0" styleClass="vcontainer" AnchorPane.bottomAnchor="0.0"
+                      AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                    <Label fx:id="bed_num_lbl1" text="Voodite arv: 3"/>
+                    <Label fx:id="price_lbl1" text="Hind: 230"/>
+                    <Label fx:id="free_rooms_num1" text="Vabu tube:"/>
+                    <Line endX="200.0"/>
+                    <Button fx:id="book_btn1" mnemonicParsing="false" onAction="#book1" text="Broneeri"/>
+                </VBox>
+            </AnchorPane>
+            <AnchorPane prefHeight="380.0" prefWidth="300.0" styleClass="container">
+                <ImageView fitHeight="189.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true"
+                           AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <Image url="@../../pictures/hotel-room.png"/>
+                </ImageView>
+                <VBox layoutX="82.0" layoutY="178.0" prefHeight="200.0" prefWidth="100.0" styleClass="vcontainer"
+                      AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                    <Label fx:id="bed_num_lbl2" text="Voodite arv: 2"/>
+                    <Label fx:id="price_lbl2" text="Hind: 114"/>
+                    <Label fx:id="free_rooms_num2" text="Vabu tube:"/>
+                    <Line endX="200.0"/>
+                    <Button fx:id="book_btn2" mnemonicParsing="false" onAction="#book2" text="Broneeri"/>
+                </VBox>
+            </AnchorPane>
+        </HBox>
+        <HBox prefHeight="399.0" prefWidth="630.0" spacing="10.0">
+            <AnchorPane prefHeight="380.0" prefWidth="300.0" styleClass="container">
+                <ImageView fitHeight="209.0" fitWidth="300.0" layoutX="-22.0" layoutY="-30.0"
+                           pickOnBounds="true"
+                           preserveRatio="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <Image url="@../../pictures/2-bed-hotel.png"/>
+                </ImageView>
+                <VBox prefHeight="200.0" prefWidth="100.0" styleClass="vcontainer" AnchorPane.bottomAnchor="0.0"
+                      AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                    <Label fx:id="bed_num_lbl3" text="Voodite arv: 2"/>
+                    <Label fx:id="price_lbl3" text="Hind: 105"/>
+                    <Label fx:id="free_rooms_num3" text="Vabu tube:"/>
+                    <Line endX="200.0"/>
+                    <Button fx:id="book_btn3" mnemonicParsing="false" onAction="#book3" text="Broneeri"/>
+                </VBox>
+            </AnchorPane>
+            <AnchorPane prefHeight="380.0" prefWidth="300.0" styleClass="container">
+                <ImageView fitHeight="189.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true"
+                           AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <Image url="@../../pictures/hotel-bedroom.png"/>
+                </ImageView>
+                <VBox layoutX="82.0" layoutY="178.0" prefHeight="200.0" prefWidth="100.0"
+                      styleClass="vcontainer"
+                      AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                    <Label fx:id="bed_num_lbl4" text="Voodite arv: 1"/>
+                    <Label fx:id="price_lbl4" text="Hind: 87"/>
+                    <Label fx:id="free_rooms_num4" text="Vabu tube:"/>
+                    <Line endX="200.0"/>
+                    <Button fx:id="book_btn4" mnemonicParsing="false" onAction="#book4" text="Broneeri"/>
+                </VBox>
+            </AnchorPane>
+        </HBox>
+    </VBox>
 </AnchorPane>

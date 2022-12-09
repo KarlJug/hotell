@@ -9,6 +9,7 @@
 <AnchorPane prefHeight="500.0" prefWidth="800.0" stylesheets="@../../CSS/andmed.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hbs.hotell.controllers.admin.KlientController">
     <HBox prefHeight="85.0" prefWidth="580.0" styleClass="container" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
         <Button fx:id="lisa_isik_btn" mnemonicParsing="false" text="Lisa" />
+      <Button fx:id="muuda_isik_btn" mnemonicParsing="false" text="Muuda" />
         <Button fx:id="refresh_btn" mnemonicParsing="false" text="Refesh" />
       <Button fx:id="delete_btn" mnemonicParsing="false" onAction="#deleteClient" text="Kustuta" />
     </HBox>
