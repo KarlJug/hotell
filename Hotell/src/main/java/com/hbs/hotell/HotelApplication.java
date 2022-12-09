@@ -10,4 +10,6 @@ public class HotelApplication extends Application {
     public void start(Stage stage) {
         Model.getInstance().getViewFactory().showClientWindow();
     }
+
+
 }

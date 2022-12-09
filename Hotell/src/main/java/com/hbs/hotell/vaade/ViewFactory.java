@@ -25,6 +25,7 @@ public class ViewFactory {
     public ViewFactory() {
         this.clientSelectMenuItem = new SimpleStringProperty("");
         this.adminSelectMenuItem = new SimpleStringProperty("");
+
     }
 
     public StringProperty getClientSelectMenuItem() {
@@ -118,11 +119,17 @@ public class ViewFactory {
         createStage(loader);
     }
 
-    public void showBooking() {
+    public FXMLLoader showBooking() {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/kasutaja/lisa/book-room.fxml"));
         createStage(loader);
+        return loader;
     }
 
+    public FXMLLoader showEditClient() {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/admin/lisa/muuda-klient.fxml"));
+        createStage(loader);
+        return loader;
+    }
     public void showAddRoom() {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/admin/lisa/lisa-ruum.fxml"));
         createStage(loader);

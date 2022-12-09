@@ -3,9 +3,11 @@ package com.hbs.hotell.controllers.admin;
 import com.hbs.hotell.DB.Klient;
 import com.hbs.hotell.DB.KlientDAO;
 import com.hbs.hotell.DatabaseConnectionManager;
+import com.hbs.hotell.controllers.admin.lisa.EditClientControlle;
 import com.hbs.hotell.model.Model;
 import com.hbs.hotell.util.Validator;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -18,6 +20,7 @@ import java.util.ResourceBundle;
 
 public class KlientController implements Initializable {
     public Button lisa_isik_btn;
+    public Button muuda_isik_btn;
     public Button refresh_btn;
     public Button delete_btn;
 
@@ -49,10 +52,19 @@ public class KlientController implements Initializable {
 
         refresh_btn.setOnAction(event -> tableView.setItems(columnData()));
         lisa_isik_btn.setOnAction(event -> onShowAddClient());
-        //delete_btn.setOnAction(event -> deleteClient());
+        muuda_isik_btn.setOnAction(event -> editClient());
     }
 
     private void onShowAddClient() {
+
+        ObservableList<Klient> klient, row;
+        klient = tableView.getItems();
+        row = tableView.getSelectionModel().getSelectedItems();
+
+        for (Klient r : row) {
+            klient.remove(r);
+        }
+
         Model.getInstance().getViewFactory().showAddClient();
     }
 
@@ -69,6 +81,23 @@ public class KlientController implements Initializable {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public void editClient() {
+        FXMLLoader loader = Model.getInstance().getViewFactory().showEditClient();
+        EditClientControlle editClientControlle = loader.getController();
+
+        ObservableList<Klient> row;
+        row = tableView.getSelectionModel().getSelectedItems();
+
+        for (Klient r : row) {
+            editClientControlle.eesnimi.setText(r.getEesnimi());
+            editClientControlle.perenimi.setText(r.getPere_nimi());
+            editClientControlle.isikukood.setText(r.getIsikukood());
+            editClientControlle.email.setText(r.getEmail());
+            editClientControlle.id_fld.setText(Long.toString(r.getId()));
+
+        }
     }
 
     public void editFirsName(TableColumn.CellEditEvent cellEditEvent) {
@@ -142,12 +171,10 @@ public class KlientController implements Initializable {
 
             clientSelected.setEmail(cellEditEvent.getNewValue().toString());
 
-            if (Validator.validate(clientSelected.getEmail())) {
+            if (Validator.validEmail(clientSelected.getEmail())) {
                 klientDAO.update(clientSelected);
-            }
-            else {
+            } else {
                 clientSelected.setEmail(temp);
-                tableView.setTooltip(new Tooltip("Button of doom"));
             }
 
         } catch (SQLException e) {
@@ -168,6 +195,7 @@ public class KlientController implements Initializable {
             ObservableList<Klient> klient, row;
             klient = tableView.getItems();
             row = tableView.getSelectionModel().getSelectedItems();
+
             for (Klient r : row) {
                 klient.remove(r);
                 klientDAO.delete(r.getId());

@@ -9,6 +9,8 @@ public class Hotellituba implements DataTransferObject {
     private boolean broneeritud;
     private String broneeria_eesnimi, broneeria_perekonnanimi;
 
+
+
     public void setId(long id) {
         this.id = id;
     }
@@ -42,7 +44,7 @@ public class Hotellituba implements DataTransferObject {
         this.hind = hind;
     }
 
-    public boolean isBroneeritud() {
+    public boolean getBroneeritud() {
         return broneeritud;
     }
 

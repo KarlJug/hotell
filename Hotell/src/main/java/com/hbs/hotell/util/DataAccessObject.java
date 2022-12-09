@@ -11,7 +11,7 @@ public abstract class DataAccessObject <T> {
     protected final Connection connection;
     protected final static String LAST_VAL = "SELECT last_value FROM ";
     protected final static String CUSTOMER_SEQUENCE = "hotell_kliendi_seq";
-    protected final static String BRONEERINGU_SEQUENCE = "hotell_bron_seq";
+    protected final static String BRONEERINGU_SEQUENCE = "hotell_broneeringud_seq";
     protected final static String HOTELLITUBA_SEQUENCE = "hotell_toad_seq";
 
 

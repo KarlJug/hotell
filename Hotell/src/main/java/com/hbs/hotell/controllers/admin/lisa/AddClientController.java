@@ -53,14 +53,14 @@ public class AddClientController implements Initializable {
                 error.setText("Error: perekonnanimi on pikkem kui 30 tähte");
                 isValid = false;
             }
-            if (isikukood.getText().length() <= 11) {
+            if (isikukood.getText().length() == 11) {
                 klient.setIsikukood(isikukood.getText());
                 isValid = true;
             } else {
                 error.setText("Error: isikukood on pikkem kui 11 tähte");
                 isValid = false;
             }
-            if (Validator.validate(email.getText())) {
+            if (Validator.validEmail(email.getText())) {
                 klient.setEmail(email.getText());
                 isValid = true;
             } else {

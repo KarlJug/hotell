@@ -48,4 +48,15 @@ public class Klient implements DataTransferObject {
     public long getId() {
         return id;
     }
+
+    @Override
+    public String toString() {
+        return "Klient{" +
+                "id=" + id +
+                ", eesnimi='" + eesnimi + '\'' +
+                ", pere_nimi='" + pere_nimi + '\'' +
+                ", isikukood='" + isikukood + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }

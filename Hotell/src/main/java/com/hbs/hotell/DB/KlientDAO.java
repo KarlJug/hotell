@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class KlientDAO extends DataAccessObject<Klient> {
 
@@ -21,6 +22,9 @@ public class KlientDAO extends DataAccessObject<Klient> {
     // Teeb SELECT query mis leiab kliendi id järgi kliendi ja valib selle info
     private static final String GET_ONE = "SELECT kliendi_id, eesnimi, pere_nimi, " +
             "isikukood, email FROM kliendid WHERE kliendi_id = ?";
+
+    private static final String GET_ONE_BY_CODE = "SELECT kliendi_id, eesnimi, pere_nimi, " +
+            "isikukood, email FROM kliendid WHERE isikukood = ?";
 
     // Teeb UPDATE query mis leiab kliendi id järgi kliendi ja uuendab infot
     private static final String UPDATE = "UPDATE kliendid SET eesnimi = ?, pere_nimi = ?, " +
@@ -56,6 +60,35 @@ public class KlientDAO extends DataAccessObject<Klient> {
             throw new RuntimeException(e);
         }
         return klient;
+    }
+
+    public boolean findByPersonalCode(String personalCode) {
+        Klient klient = new Klient();
+        try (PreparedStatement statement = this.connection.prepareStatement(GET_ONE_BY_CODE)) {
+            statement.setString(1, personalCode);
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                klient.setId(rs.getLong("kliendi_id"));
+                klient.setEesnimi(rs.getString("eesnimi"));
+                klient.setPere_nimi(rs.getString("pere_nimi"));
+                klient.setIsikukood(rs.getString("isikukood"));
+                klient.setEmail(rs.getString("email"));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+        if (Objects.equals(personalCode, klient.getIsikukood())) {
+            System.out.println(klient.getIsikukood());
+            System.out.println(personalCode);
+
+            return true;
+        } else {
+            System.out.println(klient.getIsikukood());
+            System.out.println(personalCode);
+            return false;
+        }
     }
 
     @Override
