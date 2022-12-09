@@ -6,8 +6,7 @@
 	
 2. ### [Info failide kohta](https://github.com/KarlJug/hotell/blob/main/README.md#info-failide-kohta-1)
 
-3. ### [Kuidas teha uus vaade](https://github.com/KarlJug/hotell/blob/main/README.md#kuidas-teha-uus-vaade-1)
-4. ### [Kuidas kasutada](https://github.com/KarlJug/hotell/blob/main/README.md#kuidas-kasutada)
+3. ### [Kuidas kasutada](https://github.com/KarlJug/hotell/blob/main/README.md#kuidas-kasutada)
 	- [registreeritud klientide menüü](https://github.com/KarlJug/hotell/blob/main/README.md#registreeritud-klientide-men%C3%BC%C3%BC)
 
 ## andmebaas
