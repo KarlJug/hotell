@@ -169,22 +169,15 @@ CREATE TABLE broneeringud (
 ## Info failide kohta
 
 - HotellApplication on main ja sellega laaditakse algne vaade
+- controllers kaustas on kõikide vaadete controller-id, mis sisaldavad nende scene-ide funktsioonid näiteks mis juhtud kui seda nuppu vajutad
 - ViewFactory class-is on scene-ide laadimine
-- Mode class-is kontrollib
 - DB kaustas on kõik class-id millega ühendub andmebaasi
 - recours kaustas on
 	- CSS
 	- FXML
-	- Icons
-	- Images
+	- pictures
 
 ***
-
-## Kuidas teha uus vaade
-
-1. Teha FXML fail ja sellele controller
-2. ViewFactory class-ile lisada sellele uue vaate privat Anchorpane controller ja teha getter method
-3. Controllerisse saab lisada functsioone selle vaate nuppudele
 
 ## Kuidas kasutada
 
