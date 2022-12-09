@@ -34,6 +34,7 @@ public class KasutajaMenuController implements Initializable {
         info_ptn.setOnAction(event -> onInfo());
     }
 
+    // avab akna kust sisse logida ja sulgeb hetkese akna
     private void loginView() {
         Stage stage = (Stage) login_btn.getScene().getWindow();
         Model.getInstance().getViewFactory().closeStage(stage);
