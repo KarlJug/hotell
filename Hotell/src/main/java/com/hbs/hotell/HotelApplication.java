@@ -8,8 +8,7 @@ public class HotelApplication extends Application {
 
     @Override
     public void start(Stage stage) {
+        // näitab esimset akent
         Model.getInstance().getViewFactory().showClientWindow();
     }
-
-
 }
