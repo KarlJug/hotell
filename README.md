@@ -1,12 +1,14 @@
 # Hotell
-1. ### [ SQL](https://github.com/KarlJug/hotel/blob/main/README.md#andmebaas)
-	- [Kliendid](https://github.com/KarlJug/hotel/blob/main/README.md#teha-andmepaas-nimega-hotell-ja-copy-past-ida-query-sse-j%C3%A4rgmised-k%C3%A4sud)
-	- [Toad](https://github.com/KarlJug/hotel/blob/main/README.md#tekst-toad)
-	- [Broneeringud](https://github.com/KarlJug/hotel/blob/main/README.md#tekst-broneeringud)
+1. ### [ SQL](https://github.com/KarlJug/hotell/blob/main/README.md#andmebaas)
+	- [Kliendid](https://github.com/KarlJug/hotell/blob/main/README.md#teha-andmepaas-nimega-hotell-ja-copy-past-ida-query-sse-j%C3%A4rgmised-k%C3%A4sud)
+	- [Toad](https://github.com/KarlJug/hotell/blob/main/README.md#tekst-toad)
+	- [Broneeringud](https://github.com/KarlJug/hotell/blob/main/README.md#tekst-broneeringud)
 	
-2. ### [Info failide kohta](https://github.com/KarlJug/hotel/blob/main/README.md#info-failide-kohta-1)
+2. ### [Info failide kohta](https://github.com/KarlJug/hotell/blob/main/README.md#info-failide-kohta-1)
 
-3. ### [Kuidas teha uus vaade](https://github.com/KarlJug/hotel/blob/main/README.md#kuidas-teha-uus-vaade-1)
+3. ### [Kuidas teha uus vaade](https://github.com/KarlJug/hotell/blob/main/README.md#kuidas-teha-uus-vaade-1)
+4. ### [Kuidas kasutada](https://github.com/KarlJug/hotell/blob/main/README.md#kuidas-kasutada)
+	- [registreeritud klientide menüü](https://github.com/KarlJug/hotell/blob/main/README.md#registreeritud-klientide-men%C3%BC%C3%BC)
 
 ## andmebaas
 
@@ -14,8 +16,6 @@
 
 <details><summary>SQL query kood</summary>
 <p>
-
-#### We can hide anything, even code!
 
 ```
 -- kliendid
@@ -163,7 +163,7 @@ CREATE TABLE broneeringud (
 
 | id 	 | kulastaja_eesnimi | kulastaja_perekonnanimi | tuba          | alg_aeg    | lõpp_aeg   |
 | ------:|:-----------------:|:-----------------------:|:-------------:|:----------:|:----------:|
-| 1      | Nimi              | Perekonnanimi           | 103      | DD.MM.YYYY | DD.MM.YYYY |
+| 1      | Nimi              | Perekonnanimi           | 103           | DD.MM.YYYY | DD.MM.YYYY |
 
 ***
 
