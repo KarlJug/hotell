@@ -30,7 +30,7 @@ public class BookingController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        // Lisab property value mille järgi saad andmeid lisada õigetesse tulpadesse
         book_col_id.setCellValueFactory(new PropertyValueFactory<>("id"));
         book_col_eesnimi.setCellValueFactory(new PropertyValueFactory<>("kulastaja_eesnimi"));
         book_col_perenimi.setCellValueFactory(new PropertyValueFactory<>("kulastaja_perekonnanimi"));
@@ -40,17 +40,20 @@ public class BookingController implements Initializable {
 
         tableView.setItems(columnData());
 
+        // hettkel ei tee midagi aga peaks laskma vailda tulba ja siis lugeda andmed sealt nagu KlientController-is
         tableView.setEditable(true);
         tableView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
     }
 
     public void addUserView(ActionEvent event) {
     }
-
+    
+    // Uuendab andmeid kui vajutad nuppu
     public void refreshTable(ActionEvent event) {
         tableView.setItems(columnData());
     }
 
+    // Võtab andmed andmebaasist
     public ObservableList<Broneering> columnData() {
         DatabaseConnectionManager dcm = new DatabaseConnectionManager("localhost", "hotell",
                 "postgres", "Passw0rd");
