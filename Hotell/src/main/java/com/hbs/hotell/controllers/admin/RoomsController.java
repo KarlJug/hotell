@@ -74,8 +74,7 @@ public class RoomsController implements Initializable {
     // Peaks ruumi saama lisada
     public void addUserView(ActionEvent event) {
     }
-    // Ei tee midagi
-    // Peaks ruumi saama lisada
     public void refreshTable(ActionEvent event) {
+        columnData();
     }
 }
