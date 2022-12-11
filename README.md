@@ -12,7 +12,7 @@
 ## andmebaas
 
 - Andmebaasiks kasutan postgresql
-- [database.properties saab muuta andmebaasi ühendamiseks vajalike andmeid](https://github.com/KarlJug/hotell/blob/main/Hotell/src/main/resources/database.properties)
+- [database.properties](https://github.com/KarlJug/hotell/blob/main/Hotell/src/main/resources/database.properties) failis saab muuta andmebaasi ühendamiseks vajalike andmeid
 	- dphost on ip andmebassi ip, või kui on lokaalne siis võib jätta localhost
 	- dpname on andmebaasi nimi kuhu query kood kopeerid
 	- dpuser on kasutaja nimi mellega sisse logid
