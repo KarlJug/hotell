@@ -11,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -47,7 +48,7 @@ public class BookingController implements Initializable {
 
     public void addUserView(ActionEvent event) {
     }
-    
+
     // Uuendab andmeid kui vajutad nuppu
     public void refreshTable(ActionEvent event) {
         tableView.setItems(columnData());
@@ -55,15 +56,14 @@ public class BookingController implements Initializable {
 
     // Võtab andmed andmebaasist
     public ObservableList<Broneering> columnData() {
-        DatabaseConnectionManager dcm = new DatabaseConnectionManager("localhost", "hotell",
-                "postgres", "Passw0rd");
 
         try {
+            DatabaseConnectionManager dcm = new DatabaseConnectionManager();
             Connection connection = dcm.getConnection();
             BroneeringDAO broneeringDAO = new BroneeringDAO(connection);
             return broneeringDAO.findAll();
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return null;

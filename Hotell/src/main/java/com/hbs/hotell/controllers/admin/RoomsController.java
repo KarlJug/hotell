@@ -56,15 +56,14 @@ public class RoomsController implements Initializable {
 
     // Võtab andmed andmebaasist
     private ObservableList<Hotellituba> columnData() {
-        DatabaseConnectionManager dcm = new DatabaseConnectionManager("localhost", "hotell",
-                "postgres", "Passw0rd");
 
         try {
+            DatabaseConnectionManager dcm = new DatabaseConnectionManager();
             Connection connection = dcm.getConnection();
             HotellitubaDAO HotellitubaDAO = new HotellitubaDAO(connection);
             return HotellitubaDAO.findAll();
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
@@ -74,7 +73,8 @@ public class RoomsController implements Initializable {
     // Peaks ruumi saama lisada
     public void addUserView(ActionEvent event) {
     }
+
     public void refreshTable(ActionEvent event) {
-        columnData();
+        tableView.setItems(columnData());
     }
 }

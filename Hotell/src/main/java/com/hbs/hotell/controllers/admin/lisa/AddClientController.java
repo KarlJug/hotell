@@ -13,7 +13,6 @@ import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class AddClientController implements Initializable {
@@ -22,9 +21,7 @@ public class AddClientController implements Initializable {
     public TextField isikukood;
     public TextField email;
     public Button kinnita_btn;
-    public Text error;
-    // eraldi klass vaja teha
-
+    public Text error_txt;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -33,50 +30,51 @@ public class AddClientController implements Initializable {
 
     private void onConfirm() {
 
-        DatabaseConnectionManager dcm = new DatabaseConnectionManager("localhost", "hotell",
-                "postgres", "Passw0rd");
 
         boolean isValid = false;
-        try {
-            Connection connection = dcm.getConnection();
-            KlientDAO klientDAO = new KlientDAO(connection);
-            Klient klient = new Klient();
 
-            // vaja rohkem valideerimisi 
-            // Ei tööta pean vahetama samaks mis on BookARoomController.java onConfirm() funktsioonis
-            if (eesnimi.getText().length() <= 30) {
-                klient.setEesnimi(eesnimi.getText());
-                isValid = true;
-            } else { error.setText("Error: Nimi on pikkem kui 30 tähte"); }
-            if (perenimi.getText().length() <= 30) {
-                klient.setPere_nimi(perenimi.getText());
-            } else {
-                error.setText("Error: perekonnanimi on pikkem kui 30 tähte");
-                isValid = false;
-            }
-            if (isikukood.getText().length() == 11) {
-                klient.setIsikukood(isikukood.getText());
-                isValid = true;
-            } else {
-                error.setText("Error: isikukood on pikkem kui 11 tähte");
-                isValid = false;
-            }
-            if (Validator.validEmail(email.getText())) {
-                klient.setEmail(email.getText());
-                isValid = true;
-            } else {
-                error.setText("Error: Email is not valid");
-                isValid = false;
-            }
-            // Kui kõik õige siis tekitab uue kliendi
-            if (isValid) { klientDAO.create(klient); }
 
-        } catch (SQLException e) {
-            e.printStackTrace();
+        String error = "";
+        // kontroll et kas kõik andmed sobivad
+        if (eesnimi.getText().length() > 30 || eesnimi.getText().length() == 0) {
+            error += "Nimi on liiga pikk (30) või tühi\n";
+        }
+        if (perenimi.getText().length() > 30 || perenimi.getText().length() == 0) {
+            error += "Perekonnanimi on liiga pikk (30) või tühi\n";
+        }
+        if (isikukood.getText().length() != 11 || !Validator.hasNumbers(isikukood.getText())) {
+            error += "Isikukood on vale\n";
+            System.out.println(isikukood.getText().length());
+        }
+        if (!Validator.validEmail(email.getText())) {
+            error += "Vale email";
         }
 
-        // kui kõik õige siis sulgeb akna
+        error_txt.setText(error);
+        isValid = (error.length() == 0);
+
         if (isValid) {
+            try {
+                DatabaseConnectionManager dcm = new DatabaseConnectionManager();
+                Connection connection = dcm.getConnection();
+                KlientDAO klientDAO = new KlientDAO(connection);
+                Klient klient = new Klient();
+
+                klient.setEesnimi(eesnimi.getText());
+                klient.setPere_nimi(perenimi.getText());
+                klient.setIsikukood(isikukood.getText());
+                klient.setEmail(email.getText());
+
+                // Kui kõik õige siis tekitab uue kliendi
+                klientDAO.create(klient);
+
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            // kui kõik õige siis sulgeb akna
+
             Stage stage = (Stage) kinnita_btn.getScene().getWindow();
             Model.getInstance().getViewFactory().closeStage(stage);
         }

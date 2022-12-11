@@ -13,8 +13,6 @@ import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class EditClientControlle implements Initializable {
@@ -32,8 +30,6 @@ public class EditClientControlle implements Initializable {
     }
 
     public void onConfirm() {
-        DatabaseConnectionManager dcm = new DatabaseConnectionManager("localhost", "hotell",
-                "postgres", "Passw0rd");
 
 
         String error = "";
@@ -56,7 +52,7 @@ public class EditClientControlle implements Initializable {
         if (!Validator.hasNumbers(id_fld.getText())) {
             error += "ID ei ole number";
         }
-        
+
         // näitab errorit
         error_txt.setText(error);
         // kui errorit pole siis on kõik õige / isValid = true
@@ -72,17 +68,18 @@ public class EditClientControlle implements Initializable {
             klient.setId(Long.parseLong(id_fld.getText()));
 
             try {
+                DatabaseConnectionManager dcm = new DatabaseConnectionManager();
                 Connection connection = dcm.getConnection();
                 KlientDAO klientDAO = new KlientDAO(connection);
                 // uuendab infot vastavalt ID-le (setID)
                 klientDAO.update(klient);
-                
+
                 // sulgeb akna
                 Stage stage = (Stage) kinnita_btn.getScene().getWindow();
                 Model.getInstance().getViewFactory().closeStage(stage);
 
 
-            } catch (SQLException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }

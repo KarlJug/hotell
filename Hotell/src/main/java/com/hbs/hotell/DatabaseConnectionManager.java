@@ -5,6 +5,7 @@ package com.hbs.hotell;
  */
 
 
+import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -18,11 +19,21 @@ public class DatabaseConnectionManager {
     private final Properties properties;
     
     // tekitab ühenduse andmebaasiga
-    public DatabaseConnectionManager(String host, String databaseName,
-                                     String username, String password) {
+    public DatabaseConnectionManager() throws Exception {
+
+        String host, databaseName, username, password;
+
+        this.properties = new Properties();
+        FileInputStream fileInputStream = new FileInputStream("Hotell/src/main/resources/database.properties");
+        properties.load (fileInputStream);
+
+        host = (String) properties.get("dphost");
+        databaseName = (String) properties.get("dpname");
+        username = (String) properties.get("dpuser") ;
+        password = (String) properties.get("dppassword");
 
         this.url = "jdbc:postgresql://" + host + "/" + databaseName;
-        this.properties = new Properties();
+
         this.properties.setProperty("user", username);
         this.properties.setProperty("password", password);
 

@@ -14,7 +14,6 @@ import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ResourceBundle;
@@ -52,7 +51,7 @@ public class BookARoomController implements Initializable {
         LocalDate localDateStart = date_start.getValue();
         LocalDate localDateEnd = date_end.getValue();
         Period period = localDateStart.until(localDateEnd);
-        
+
         // Vaatab mitme päevane vahe on valitud ajast
         int days = period.getDays();
 
@@ -74,12 +73,37 @@ public class BookARoomController implements Initializable {
 
     // Kui vajutad nuppu
     private void onConfirm() {
-    
-        DatabaseConnectionManager dcm = new DatabaseConnectionManager("localhost", "hotell",
-                "postgres", "Passw0rd");
 
-        boolean isValid = false, exists = false;
+
+        boolean isValid, exists = false;
+
+        String[] split = type_lbl.getText().split(" ");
+        int type = Integer.parseInt(split[split.length - 1]);
+
+        String error = "";
+        // kontroll et kas kõik andmed sobivad
+        if (nimi_tfd.getText().length() > 30 || nimi_tfd.getText().length() == 0) {
+            error += "Nimi on liiga pikk (30) või tühi\n";
+        }
+        if (pere_nimi_tfd.getText().length() > 30 || pere_nimi_tfd.getText().length() == 0) {
+            error += "Perekonnanimi on liiga pikk (30) või tühi\n";
+        }
+        if (isikukood_tfd.getText().length() != 11 || !Validator.hasNumbers(isikukood_tfd.getText())) {
+            error += "Isikukood on vale\n";
+            System.out.println(isikukood_tfd.getText().length());
+        }
+        if (date_end.getValue().isBefore(LocalDate.now())) {
+            error += "Aeg on vale.\n";
+        }
+        if (!Validator.validEmail(email_tfd.getText())) {
+            error += "Vale email";
+        }
+
+        error_txt.setText(error);
+        isValid = (error.length() == 0);
+
         try {
+            DatabaseConnectionManager dcm = new DatabaseConnectionManager();
             Connection connection = dcm.getConnection();
             HotellitubaDAO hotellitubaDAO = new HotellitubaDAO(connection);
             KlientDAO klientDAO = new KlientDAO(connection);
@@ -88,31 +112,6 @@ public class BookARoomController implements Initializable {
             Hotellituba tuba = new Hotellituba();
             Broneering broneering = new Broneering();
             Klient klient = new Klient();
-            String error = "";
-
-            String[] split = type_lbl.getText().split(" ");
-            int type = Integer.parseInt(split[split.length - 1]);
-
-            // kontroll et kas kõik andmed sobivad
-            if (nimi_tfd.getText().length() > 30 || nimi_tfd.getText().length() == 0) {
-                error += "Nimi on liiga pikk (30) või tühi\n";
-            }
-            if (pere_nimi_tfd.getText().length() > 30 || pere_nimi_tfd.getText().length() == 0) {
-                error += "Perekonnanimi on liiga pikk (30) või tühi\n";
-            }
-            if (isikukood_tfd.getText().length() != 11 || !Validator.hasNumbers(isikukood_tfd.getText())) {
-                error += "Isikukood on vale\n";
-                System.out.println(isikukood_tfd.getText().length());
-            }
-            if (date_end.getValue().isBefore(LocalDate.now())) {
-                error += "Aeg on vale.\n";
-            }
-            if (!Validator.validEmail(email_tfd.getText())) {
-                error += "Vale email";
-            }
-
-            error_txt.setText(error);
-            isValid = (error.length() == 0);
 
             if (isValid) {
                 tuba.setBroneeria_eesnimi(nimi_tfd.getText());
@@ -135,25 +134,27 @@ public class BookARoomController implements Initializable {
             if (isValid && klientDAO.findByPersonalCode(klient.getIsikukood())) {
                 exists = true;
             }
-            
+
             // kui isikut pole siis bronnerib koos kasutaja lisamisega andme baasi
             if (isValid && !exists) {
                 klientDAO.create(klient);
                 broneeringDAO.create(broneering);
                 hotellitubaDAO.bookARoom(tuba.getToa_num(), tuba);
+            }
+
             // kui isik on juba olemas siis ei lisa isikut aga proneerib ikka
-            } else if (isValid && exists) {
+            else if (isValid && exists) {
                 broneeringDAO.create(broneering);
                 hotellitubaDAO.bookARoom(tuba.getToa_num(), tuba);
-
             }
+
             // sulgeb kui kõik õige
             if (isValid) {
                 Stage stage = (Stage) broneeri_btn.getScene().getWindow();
                 Model.getInstance().getViewFactory().closeStage(stage);
             }
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

@@ -13,6 +13,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -54,7 +55,7 @@ public class KlientController implements Initializable {
         lisa_isik_btn.setOnAction(event -> onShowAddClient());
         muuda_isik_btn.setOnAction(event -> editClient());
     }
-    
+
     // siin on vist viga ja kustuab. pean ülevaatama
     // Peaks nuppu vajutusel akna avama kus saad uue kliendi lisada
     private void onShowAddClient() {
@@ -69,23 +70,21 @@ public class KlientController implements Initializable {
 
         Model.getInstance().getViewFactory().showAddClient();
     }
-    
+
     // Saab andmebaasist info kõigi klientide peale
     public ObservableList<Klient> columnData() {
-        DatabaseConnectionManager dcm = new DatabaseConnectionManager("localhost", "hotell",
-                "postgres", "Passw0rd");
-
         try {
+            DatabaseConnectionManager dcm = new DatabaseConnectionManager();
             Connection connection = dcm.getConnection();
             KlientDAO klientDAO = new KlientDAO(connection);
             return klientDAO.findAll();
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
     }
-    
+
     // muuda nuppule saadab info
     public void editClient() {
         FXMLLoader loader = Model.getInstance().getViewFactory().showEditClient();
@@ -103,13 +102,12 @@ public class KlientController implements Initializable {
 
         }
     }
-    
+
     // kui topelt klikid nime peale saad seda muuta
     public void editFirsName(TableColumn.CellEditEvent cellEditEvent) {
-        DatabaseConnectionManager dcm = new DatabaseConnectionManager("localhost", "hotell",
-                "postgres", "Passw0rd");
 
         try {
+            DatabaseConnectionManager dcm = new DatabaseConnectionManager();
             Connection connection = dcm.getConnection();
             KlientDAO klientDAO = new KlientDAO(connection);
 
@@ -117,7 +115,7 @@ public class KlientController implements Initializable {
             clientSelected.setEesnimi(cellEditEvent.getNewValue().toString());
             klientDAO.update(clientSelected);
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -125,10 +123,9 @@ public class KlientController implements Initializable {
 
     // kui topelt klikid perekonnanime peale saad seda muuta
     public void editLastName(TableColumn.CellEditEvent cellEditEvent) {
-        DatabaseConnectionManager dcm = new DatabaseConnectionManager("localhost", "hotell",
-                "postgres", "Passw0rd");
 
         try {
+            DatabaseConnectionManager dcm = new DatabaseConnectionManager();
             Connection connection = dcm.getConnection();
             KlientDAO klientDAO = new KlientDAO(connection);
 
@@ -136,7 +133,7 @@ public class KlientController implements Initializable {
             clientSelected.setPere_nimi(cellEditEvent.getNewValue().toString());
             klientDAO.update(clientSelected);
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -144,10 +141,9 @@ public class KlientController implements Initializable {
 
     // kui topelt klikid isikukoodi peale saad seda muuta
     public void editCode(TableColumn.CellEditEvent cellEditEvent) {
-        DatabaseConnectionManager dcm = new DatabaseConnectionManager("localhost", "hotell",
-                "postgres", "Passw0rd");
 
         try {
+            DatabaseConnectionManager dcm = new DatabaseConnectionManager();
             Connection connection = dcm.getConnection();
             KlientDAO klientDAO = new KlientDAO(connection);
 
@@ -158,7 +154,7 @@ public class KlientController implements Initializable {
                 klientDAO.update(clientSelected);
             }
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -166,10 +162,9 @@ public class KlientController implements Initializable {
 
     // kui topelt klikid emaili peale saad seda muuta
     public void editEmail(TableColumn.CellEditEvent cellEditEvent) {
-        DatabaseConnectionManager dcm = new DatabaseConnectionManager("localhost", "hotell",
-                "postgres", "Passw0rd");
 
         try {
+            DatabaseConnectionManager dcm = new DatabaseConnectionManager();
             String temp;
             Connection connection = dcm.getConnection();
             KlientDAO klientDAO = new KlientDAO(connection);
@@ -185,7 +180,7 @@ public class KlientController implements Initializable {
                 clientSelected.setEmail(temp);
             }
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -195,10 +190,9 @@ public class KlientController implements Initializable {
     // siis see kasutaja kustutakse andmebaasist
     public void deleteClient() {
 
-        DatabaseConnectionManager dcm = new DatabaseConnectionManager("localhost", "hotell",
-                "postgres", "Passw0rd");
 
         try {
+            DatabaseConnectionManager dcm = new DatabaseConnectionManager();
             Connection connection = dcm.getConnection();
             KlientDAO klientDAO = new KlientDAO(connection);
 
@@ -210,7 +204,7 @@ public class KlientController implements Initializable {
                 klient.remove(r);
                 klientDAO.delete(r.getId());
             }
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

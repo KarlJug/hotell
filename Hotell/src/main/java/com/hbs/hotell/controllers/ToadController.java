@@ -44,10 +44,9 @@ public class ToadController implements Initializable {
     }
 
     public void getFreeRooms() {
-        DatabaseConnectionManager dcm = new DatabaseConnectionManager("localhost", "hotell",
-                "postgres", "Passw0rd");
 
         try {
+            DatabaseConnectionManager dcm = new DatabaseConnectionManager();
             Connection connection = dcm.getConnection();
             HotellitubaDAO hotellitubaDAO = new HotellitubaDAO(connection);
             // leiab vastavalt toale kui paljud nendest on vabad
@@ -55,24 +54,25 @@ public class ToadController implements Initializable {
             free_rooms_num2.setText(free_rooms_num2.getText() + " " + hotellitubaDAO.findAllAvailable(2).size());
             free_rooms_num3.setText(free_rooms_num3.getText() + " " + hotellitubaDAO.findAllAvailable(3).size());
             free_rooms_num4.setText(free_rooms_num4.getText() + " " + hotellitubaDAO.findAllAvailable(4).size());
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
     // poolik ei kasuta peaks andme baasist hiinad võtma ja näitama
     public void getPrice() {
-        DatabaseConnectionManager dcm = new DatabaseConnectionManager("localhost", "hotell",
-                "postgres", "Passw0rd");
 
         try {
+            DatabaseConnectionManager dcm = new DatabaseConnectionManager();
             Connection connection = dcm.getConnection();
             HotellitubaDAO hotellitubaDAO = new HotellitubaDAO(connection);
 
             price_lbl1.setText(price_lbl1.getText() + " ");
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
