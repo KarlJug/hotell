@@ -12,10 +12,11 @@
 ## andmebaas
 
 - Andmebaasiks kasutan postgresql
-- Teha andmebaas nimega hotell
-- ip address panna - localhost
-- Kasutaja nimeks panna - postgres
-- Parooliks panna - Passw0rd
+- [database.properties saab muuta andmebaasi ühendamiseks vajalike andmeid](https://github.com/KarlJug/hotell/blob/main/Hotell/src/main/resources/database.properties)
+	- dphost on ip andmebassi ip, või kui on lokaalne siis võib jätta localhost
+	- dpname on andmebaasi nimi kuhu query kood kopeerid
+	- dpuser on kasutaja nimi mellega sisse logid
+	- dppassword muudab andmebaasi parooli
 - Ja copy past-ida query-sse järgmised käsud
 
 <details><summary>SQL query kood</summary>
