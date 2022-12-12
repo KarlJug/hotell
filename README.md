@@ -15,7 +15,7 @@
 - [database.properties](https://github.com/KarlJug/hotell/blob/main/Hotell/src/main/resources/database.properties) failis saab muuta andmebaasi ühendamiseks vajalike andmeid
 	- dphost on ip andmebassi ip, või kui on lokaalne siis võib jätta localhost
 	- dpname on andmebaasi nimi kuhu query kood kopeerid
-	- dpuser on kasutaja nimi mellega sisse logid
+	- dpuser on kasutaja nimi millega sisse logid
 	- dppassword muudab andmebaasi parooli
 - Ja copy past-ida query-sse järgmised käsud
 
@@ -189,9 +189,9 @@ CREATE TABLE broneeringud (
 
 - kui andmebaasid on olemas, saab broneerida hotelli ruum nime, isikukoodiga ja emailiga.
 - Admin paneeli saab läbi all vasakul oleva logi sisse nuppu.
-- Kasutaiaid pole hetkel, aga kui vajutad sisene siis saad admin paneeli
+- Kasutajaid millega sisse logida pole hetkel, aga kui vajutad sisene siis saad admin paneeli
 - admin paneelis saad valida näha broneeringuid, registreerituid kliente ja hotelli tubade kohta
 #### registreeritud klientide menüü
 - registreeritud klientide menüüs on võimalik topelt klõpsuga või valida klient ja vajutada "muuda" nuppu, et muuta kliendi infot
 - Kliendi saab kustutada kui vajutad kliendi lahtri peale ja kustuta nuppu
-- Teistel menüüdel ei ole seda funktsionaalsist veel
+- Teistel menüüdel ei ole seda funktsionaalsust veel
